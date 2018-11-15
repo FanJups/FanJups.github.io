@@ -4,11 +4,11 @@
 
 author : Fanon JUPKWO
 email : jupsfan@gmail.com
-date : dimanche 11 novembre 2018
+date : samedi 03 novembre 2018
 
 -->
 
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 
 <html>
 
@@ -69,9 +69,11 @@ date : dimanche 11 novembre 2018
 		<!-- Début pop up -->
 
 		<div id="orange-background">
-			
+			 
 
 		</div>
+
+		<!-- Pop up accès direct étape 3 pour un seul aspect-->
 
 		<div id="dlgbox">
 
@@ -86,6 +88,72 @@ date : dimanche 11 novembre 2018
 
 			<div id="dlgfooter">
 				
+
+			</div>
+			
+
+		</div>
+
+		<!-- Pop up duplicate values étape 2-->
+
+		<div id="dlgboxErrorDuplicateValues">
+
+			<div id="dlgheaderErrorDuplicateValues">Erreur : chaque rang doit être unique</div>
+
+			<div id="dlgbodyErrorDuplicateValues">
+				
+				
+				 
+
+			</div>
+
+			<div id="dlgfooterErrorDuplicateValues">
+				
+			<strong style=" font-size: 2em ; "> <i id="closeDuplicates"  class="fa fa-close smile_close_presentation" aria-hidden="true"></i></strong>
+
+			</div>
+			
+
+		</div>
+
+		<!-- Pop up intervalle min max pas respecté étape 2-->
+
+		<div id="dlgboxErrorMinMax">
+
+			<div id="dlgheaderErrorMinMax"></div>
+
+			<div id="dlgbodyErrorMinMax">
+				
+				
+				 
+
+			</div>
+
+			<div id="dlgfooterErrorMinMax"> 
+				
+			<strong style=" font-size: 2em ; "> <i id="closeMinMax"  class="fa fa-close smile_close_presentation" aria-hidden="true"></i></strong>
+
+			</div>
+			
+
+		</div>
+
+		<!-- Pop up valence manquante étape 3-->
+
+		<div id="dlgboxErrorValence">
+
+			<div id="dlgheaderErrorValence">Erreur : chaque aspect doit avoir sa valence</div>
+
+			<div id="dlgbodyErrorValence">
+				
+				
+				 
+
+			</div>
+
+			<div id="dlgfooterErrorValence">
+				
+			<strong style=" font-size: 2em ; "> <i id="closeErrorValence"  class="fa fa-close smile_close_presentation" aria-hidden="true"></i></strong>
 
 			</div>
 			
@@ -109,7 +177,7 @@ date : dimanche 11 novembre 2018
 
 		<!-- presentation -->
 
-		<div id="presentation"  class="row">
+		<div id="presentation"  class="row"> 
 
 			<div class="col-xs-12">
 
@@ -121,7 +189,7 @@ date : dimanche 11 novembre 2018
 				<br> 
 			 
 
-				<strong style=" font-size: 2em ; "> <i id="smile"  class="fa fa-smile-o smile_presentation" aria-hidden="true"></i></strong>
+				<strong style=" font-size: 2em ; "> <i id="smile"  class="fa fa-smile-o smile_close_presentation" aria-hidden="true"></i></strong>
 
 			</div>
 			
@@ -152,7 +220,7 @@ date : dimanche 11 novembre 2018
 
 					<fieldset>
 
-						<div class="form-group">
+						<div class="form-group"> 
 
 							<input type="text" name="aspectpsy" id="aspectpsy" class="form-control input-lg " placeholder="Entrez chaque aspect puis cliquer sur Envoyer" size="60"  required>
 						
@@ -236,11 +304,43 @@ date : dimanche 11 novembre 2018
 		<div id="valence"  class="row">
 
 			<div class="col-xs-12">
-				
-ddddddddddddd
-			</div>
-			
 
+				<p>
+					<span>3 / 3 )</span> Indiquez si chaque aspect est affecté positivement ou négativement par votre poids.
+
+				</p>
+
+				<br>
+
+				<div id="aspects&Valence" class="table-responsive">
+
+					<form id="formAspects&Valence">
+
+						<fieldset>
+
+							<table id="aspect&Importance&ValenceTable" class="table table-bordered table-striped">
+								
+
+							</table>
+
+							<button type="submit" class="btn btn-warning">Envoyer</button>
+							
+
+
+						</fieldset>
+						
+
+					</form>
+
+					<br>
+					
+
+
+				</div>
+				
+
+			</div>
+	
 
 		</div>
 
@@ -248,17 +348,43 @@ ddddddddddddd
 
 		<div id="conclusion"  class="row">
 
-			<div class="col-xs-12">
-				xxxxxxxxxxxxx
+			<div id="wrapConclusion" class="col-xs-12">
+				
+				<p id="motConclusion">&nbsp; &nbsp; Nous vous remercions d'avoir rempli le questionnaire. Vous faites partie de cette étude. Si vous le souhaitez, nous vous prions d'enregistrer votre email pour être au courant des résultats de notre étude. Merci d'avance.
+				</p>
+
+				
+
+				<strong id="smileConclusion" style=" font-size: 2em ; "> <i class="fa fa-smile-o smile_close_presentation" aria-hidden="true"></i></strong>
+
+				<br>
+
+				<form id="formConclusion" class="form-inline">
+
+					<fieldset>
+
+						<div class="form-group">
+
+							<input type="text" name="nameConclusion" id="nameConclusion" class="form-control input-lg " placeholder="Entrez votre email puis cliquer sur Envoyer" size="60" autofocus  required>
+							
+
+						</div>
+
+						<button type="submit" class="btn btn-warning">Envoyer</button> 
+						
+
+					</fieldset>
+					
+				</form>
+
+				
+
+				<p id="remerciementsConclusion">&nbsp; &nbsp; Nous vous remercions d'avoir saisi votre email. Nous vous contacterons pour vous faire part de notre étude.
+				</p>
 
 			</div>
-			
-
-
+	
 		</div>
-
-
-		
 
 	</div>
 
