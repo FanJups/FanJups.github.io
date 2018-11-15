@@ -6,7 +6,19 @@ $(document).ready(function(){
 
 	var formAspectsElt;
 
+	var formAspectsImportanceElt = document.getElementById("formAspects&Importance") ; 
+
+	var formAspectsValenceElt = document.getElementById("formAspects&Valence") ;
+
+	var formConclusionElt = document.getElementById("formConclusion") ;
+
 	var listeAspects =[];
+
+	var listeInputs2 =[];
+
+	var listeInputsValues2 =[];
+
+	var listePresenceInputs2 =[];
 
 	var showImportance = false;
 
@@ -16,7 +28,27 @@ $(document).ready(function(){
 
 	var timing = 30;
 
+	var listeAspectUser =[]; // liste des aspects + importance + valence
+
 	/** functions Start **/
+
+	/** Début AspectClass**/
+
+	function AspectUser(nameAspectDonuts, importanceAspectDonuts,valenceAspectDonuts)
+	{
+		this.nameAspect =nameAspectDonuts;
+		this.importanceAspect=importanceAspectDonuts;
+		this.valenceAspect=valenceAspectDonuts;
+
+		this.description = function(){
+
+			return "Aspect ->"+this.nameAspect+" Rang ->"+this.importanceAspect+" Valence ->"+this.valenceAspect;
+		};
+	}
+
+
+
+	/** Fin AspectClass**/
 
 	
 
@@ -54,7 +86,7 @@ $(document).ready(function(){
 
 			document.getElementById("chrono").textContent = show;
 
-			var countDownTimeOut = setTimeout(countDown30,1000);
+			var countDownTimeOut = setTimeout(countDown30,1000); // Chrono chaque 1 s
 
 			if(timing < 0)
 			{
@@ -79,12 +111,50 @@ $(document).ready(function(){
 			}else{ //The user entered something
 
 					
-					$("#aspects").hide();
+					$("#aspects").hide(); 
 
 		        	
-		        	
+		        	if(listeAspects.length === 1)
+		        	{
+		        		
 
-		        	if(listeAspects.length > 1 || listeAspects.length === 1 )
+		        		showDialogAfterOneAspect();
+
+		        		
+
+		        		var eltAspectUser = new AspectUser(listeAspects[0],1,""); 
+
+		        		listeAspectUser.push(eltAspectUser); 
+
+		        		listeAspectUser.forEach(function (aUser) {
+        
+        									console.log(aUser.description());
+    									});
+
+		        		hideDialogAfterOneAspect();
+
+		        		showValence = true;
+
+		        		/** Début  Traitement étape 3  **/
+
+		        		
+
+		        		if(showImportance === false & showValence === true & showConclusion === false)
+		        		{
+		        			showFormStep3(listeAspectUser);
+
+		        			
+		        		}
+
+
+		        		/** Fin  Traitement étape 3  **/
+
+		        		
+
+		        		
+		        	}
+
+		        	if(listeAspects.length > 1)
 		        	{
 		        		console.log(listeAspects.length+" résultats");
 
@@ -97,7 +167,7 @@ $(document).ready(function(){
 							
 							
 
-							var aspectImportanceTableElt = document.getElementById("aspect&ImportanceTable");
+							var aspectImportanceTableElt = document.getElementById("aspect&ImportanceTable");  
 
 							var tr0Elt = document.createElement("tr");
 
@@ -137,7 +207,7 @@ $(document).ready(function(){
 
 								inputImportanceElt.setAttribute("name",nameInputImportanceElt);
 
-								inputImportanceElt.setAttribute("id",nameInputImportanceElt);
+								inputImportanceElt.setAttribute("id",nameInputImportanceElt); 
 
 								inputImportanceElt.setAttribute("min","1");
 
@@ -151,9 +221,11 @@ $(document).ready(function(){
 
 								inputImportanceElt.classList.add("form-control");
 
+								listeInputs2.push(inputImportanceElt);
+
 								
 
-								td0_2Elt.appendChild(inputImportanceElt) ; //INPUT
+								td0_2Elt.appendChild(inputImportanceElt) ; // ADD INPUT
 
 								trIElt.appendChild(td0_1Elt);
 
@@ -161,6 +233,150 @@ $(document).ready(function(){
 
 								aspectImportanceTableElt.appendChild(trIElt);
 							}
+
+							//Traitement du formulaire étape 2
+
+							var verifyValueBetweenMinMax = 0; //Je suppose qu'aucune  valeur n'est >=min et <=max
+
+							formAspectsImportanceElt.addEventListener("submit",function(e) {
+
+								for(var j=0;j<listeInputs2.length;j++)
+								{
+
+									var valueInt = parseInt(listeInputs2[j].value.trim());
+
+									
+
+									listeInputsValues2[j]=valueInt;
+
+									if(valueInt>=1 && valueInt<=listeInputs2.length)
+									{
+										verifyValueBetweenMinMax++;
+									}
+								}
+
+								
+
+								if(verifyValueBetweenMinMax === listeInputs2.length)
+								{
+									//Je m'assure maintenant qu'il n y a pas de doublons
+
+									for(var j=0;j<listeInputsValues2.length;j++)
+									{
+
+										var compteurDoublons = 0;
+
+										for(var jj=0;jj<listeInputsValues2.length;jj++)
+										{
+
+											if(listeInputsValues2[j]===listeInputsValues2[jj])
+											{
+												compteurDoublons++;
+											}
+										}
+
+										listePresenceInputs2[j] = compteurDoublons;
+
+										
+									}
+
+									var errorsDuplicate =0; //Je suppose que chaque valeur apparaît une seule fois
+
+									for(var l=0;l<listePresenceInputs2.length;l++) // Je parcours le tableau d'occurences
+									{
+										if(listePresenceInputs2[l] > 1)
+										{
+											errorsDuplicate++;
+
+											
+
+										}else{
+
+										 // listePresenceInputs2[l] == 1 
+										}
+									}
+
+									if(errorsDuplicate===0)
+									{
+										//Formulaire correct, on passe à l'étape 3
+
+										console.log("Etape 3 correct");
+
+										
+
+										for(var p=0;p<listeAspects.length;p++)
+										{
+											var eltAspectUser = new AspectUser(listeAspects[p],listeInputsValues2[p],"");
+
+											listeAspectUser.push(eltAspectUser);
+										}
+
+										listeAspectUser.forEach(function (aUser) {
+        
+        									console.log(aUser.description());
+    									});
+
+										$("#importance").hide(); 
+
+										showImportance = false;
+
+										showValence = true;
+
+		    							document.getElementById("valence").style.display = "flex";
+
+		    							/** Début  Traitement étape 3  **/
+
+		    							if(showImportance === false & showValence === true & showConclusion === false)
+		    							{
+		    								showFormStep3(listeAspectUser);
+
+
+		    							}
+
+		    							/** Fin  Traitement étape 3  **/
+
+									}else{
+
+										//Erreur
+
+										
+
+										//Réinitialisation
+
+
+
+										showDialogErrorDuplicateValues();
+
+										verifyValueBetweenMinMax =0;
+
+										errorsDuplicate =0;
+
+									}
+
+
+								}else{
+
+									//Toutes les valeurs ne sont pas comprises entre 1 et length
+
+									
+
+									showDialogErrorMinMax(listeInputs2.length);
+
+									//Réinitialisation
+
+									verifyValueBetweenMinMax =0;
+
+
+								}
+
+
+
+
+								e.preventDefault(); // Annulation de l'envoi des données 
+
+							}); //Fin Traitement du formulaire étape 2
+
+
 						}
 		        	}
 
@@ -187,13 +403,13 @@ $(document).ready(function(){
 	 	formAspectsElt.addEventListener("submit", function(e) {
 
 
-	 		var aspect = formAspectsElt.elements.aspectpsy.value;
+	 		var aspect = formAspectsElt.elements.aspectpsy.value.trim();
 
-	 		if( aspect.trim().length !=0 )
+	 		if( aspect.length !=0 )
 	 		{
-	 			listeAspects.push(aspect.trim());
+	 			listeAspects.push(aspect);
 
-	 			document.getElementById("aspectsResultats").appendChild(document.createTextNode(' "'+aspect.trim()+'" '));
+	 			document.getElementById("aspectsResultats").appendChild(document.createTextNode(' "'+aspect+'" '));
 
 	 			formAspectsElt.elements.aspectpsy.value = "";
 
@@ -205,7 +421,7 @@ $(document).ready(function(){
 
 	 		document.getElementById("aspectpsy").focus();
 
-	 		e.preventDefault(); // Annulation de l'envoi des données
+	 		e.preventDefault(); // Annulation de l'envoi des données 
 
 
 	 	}); //En cliquant sur submit, on saisit les aspects
@@ -213,7 +429,7 @@ $(document).ready(function(){
         
 	}
 
-	function showDialog()
+	function showDialogAfterOneAspect()
 	{
 		var orangebg = document.getElementById("orange-background");
                              	   
@@ -223,23 +439,349 @@ $(document).ready(function(){
                              	   
         dlg.style.display ="block";
 
-        if (document.body)
-        {
-        	var winWidth = (document.body.clientWidth);
-            var winHeight = (document.body.clientHeight);
-
-        }else{
-
-        	var winWidth = (window.innerWidth);
-            var winHeight = (window.innerHeight);
-
-
-        }
-
-        //dlg.style.left = (winWidth/4) +"px";
-                             	   
-       // dlg.style.top = "200px";
+        
                              	
+	}
+
+	function hideDialogAfterOneAspect()
+	{
+		$("#dlgbox,#orange-background").hide(6000 , function(){
+
+			
+
+		    document.getElementById("valence").style.display = "flex";
+
+		    document.getElementById("orange-background").style.display="none";
+                             	   
+        	document.getElementById("dlgbox").style.display="none";
+                             	   
+        
+
+		}); 
+
+		
+	}
+
+	function showDialogErrorDuplicateValues()
+	{
+		document.getElementById("orange-background").style.display ="block";
+                             	   
+        document.getElementById("dlgboxErrorDuplicateValues").style.display ="block";
+
+        $("#closeDuplicates").click(function(){
+
+        	$("#dlgboxErrorDuplicateValues,#orange-background").hide();
+
+
+        });
+                             	   
+       
+	}
+
+	function showDialogErrorMinMax(max)
+	{
+		document.getElementById("orange-background").style.display ="block";
+
+		document.getElementById("dlgheaderErrorMinMax").textContent ="Toutes les valeurs ne sont pas comprises entre 1 et "+max;
+                             	   
+        document.getElementById("dlgboxErrorMinMax").style.display ="block";
+
+        $("#closeMinMax").click(function(){
+
+        	$("#dlgboxErrorMinMax,#orange-background").hide();
+
+
+        });
+                             	   
+       
+	}
+
+	function showDialogErrorValence()
+	{
+		document.getElementById("orange-background").style.display ="block";
+                             	   
+        document.getElementById("dlgboxErrorValence").style.display ="block";
+
+        $("#closeErrorValence").click(function(){
+
+        	$("#dlgboxErrorValence,#orange-background").hide();
+
+
+        });
+                             	   
+       
+	}
+
+	function showFormStep3(liste)
+	{
+		var aspectImportanceValenceTableElt = document.getElementById("aspect&Importance&ValenceTable");
+
+		var tr0Elt = document.createElement("tr");
+
+		var th0_1Elt = document.createElement("th");
+
+		th0_1Elt.textContent ="Aspect";
+
+		var th0_2Elt = document.createElement("th");
+
+		th0_2Elt.textContent ="Ordre importance";
+
+		var th0_3Elt = document.createElement("th");
+
+		th0_3Elt.textContent ="Valence";
+
+		tr0Elt.appendChild(th0_1Elt);
+
+		tr0Elt.appendChild(th0_2Elt);
+
+		tr0Elt.appendChild(th0_3Elt);
+
+		aspectImportanceValenceTableElt.appendChild(tr0Elt);
+
+		for(var i=0;i<liste.length;i++)
+		{
+			var trIElt = document.createElement("tr");
+
+			var td1_IElt = document.createElement("td");
+
+			td1_IElt.textContent = liste[i].nameAspect ;
+
+			var td2_IElt = document.createElement("td");
+
+			td2_IElt.textContent = liste[i].importanceAspect ;
+
+			var td3_IElt = document.createElement("td");
+
+			// 6 INPUTS RADIO
+
+			var nameInputValenceElt = "name_valence_"+(i+1);
+
+			 
+
+			//input 1
+
+			var inputValenceElt1 = document.createElement("input");
+			inputValenceElt1.setAttribute("type","radio");
+			inputValenceElt1.setAttribute("name",nameInputValenceElt);
+			inputValenceElt1.setAttribute("value","---");
+
+			//label 1
+
+			var labelValenceElt1 = document.createElement("label");
+			labelValenceElt1.setAttribute("for","---");
+			labelValenceElt1.textContent = "---";
+
+
+
+
+			//input 2
+
+			var inputValenceElt2 = document.createElement("input");
+			inputValenceElt2.setAttribute("type","radio");
+			inputValenceElt2.setAttribute("name",nameInputValenceElt);
+			inputValenceElt2.setAttribute("value","--");
+
+			//label 2
+
+			var labelValenceElt2 = document.createElement("label");
+			labelValenceElt2.setAttribute("for","--");
+			labelValenceElt2.textContent = "--";
+
+			//input 3
+
+			var inputValenceElt3 = document.createElement("input");
+			inputValenceElt3.setAttribute("type","radio");
+			inputValenceElt3.setAttribute("name",nameInputValenceElt);
+			inputValenceElt3.setAttribute("value","-");
+
+			//label 3
+
+			var labelValenceElt3 = document.createElement("label");
+			labelValenceElt3.setAttribute("for","-");
+			labelValenceElt3.textContent = "-";
+
+			//input 4
+
+			var inputValenceElt4 = document.createElement("input");
+			inputValenceElt4.setAttribute("type","radio");
+			inputValenceElt4.setAttribute("name",nameInputValenceElt);
+			inputValenceElt4.setAttribute("value","+");
+
+			//label 4
+
+			var labelValenceElt4 = document.createElement("label");
+			labelValenceElt4.setAttribute("for","+");
+			labelValenceElt4.textContent = "+";
+
+			//input 5
+
+			var inputValenceElt5 = document.createElement("input");
+			inputValenceElt5.setAttribute("type","radio");
+			inputValenceElt5.setAttribute("name",nameInputValenceElt);
+			inputValenceElt5.setAttribute("value","++");
+
+			//label 5
+
+			var labelValenceElt5 = document.createElement("label");
+			labelValenceElt5.setAttribute("for","++");
+			labelValenceElt5.textContent = "++";
+
+			//input 6
+
+			var inputValenceElt6 = document.createElement("input");
+			inputValenceElt6.setAttribute("type","radio");
+			inputValenceElt6.setAttribute("name",nameInputValenceElt);
+			inputValenceElt6.setAttribute("value","+++");
+
+			//label 6
+
+			var labelValenceElt6 = document.createElement("label");
+			labelValenceElt6.setAttribute("for","+++");
+			labelValenceElt6.textContent = "+++";
+
+			td3_IElt.appendChild(inputValenceElt1);
+			td3_IElt.appendChild(document.createTextNode(" "));
+			td3_IElt.appendChild(labelValenceElt1);
+			td3_IElt.appendChild(document.createTextNode(" / "));
+
+			td3_IElt.appendChild(inputValenceElt2);
+			td3_IElt.appendChild(document.createTextNode(" "));
+			td3_IElt.appendChild(labelValenceElt2);
+			td3_IElt.appendChild(document.createTextNode(" / "));
+
+			td3_IElt.appendChild(inputValenceElt3);
+			td3_IElt.appendChild(document.createTextNode(" "));
+			td3_IElt.appendChild(labelValenceElt3);
+			td3_IElt.appendChild(document.createTextNode(" / "));
+
+			td3_IElt.appendChild(inputValenceElt4);
+			td3_IElt.appendChild(document.createTextNode(" "));
+			td3_IElt.appendChild(labelValenceElt4);
+			td3_IElt.appendChild(document.createTextNode(" / "));
+
+			td3_IElt.appendChild(inputValenceElt5);
+			td3_IElt.appendChild(document.createTextNode(" "));
+			td3_IElt.appendChild(labelValenceElt5);
+			td3_IElt.appendChild(document.createTextNode(" / "));
+
+			td3_IElt.appendChild(inputValenceElt6);
+			td3_IElt.appendChild(document.createTextNode(" "));
+			td3_IElt.appendChild(labelValenceElt6);
+
+			trIElt.appendChild(td1_IElt);
+			trIElt.appendChild(td2_IElt);
+			trIElt.appendChild(td3_IElt);
+
+			aspectImportanceValenceTableElt.appendChild(trIElt);
+			
+		}
+
+		formAspectsValenceElt.addEventListener("submit",function(e){
+
+			var compteur = 0;
+
+			for(var i=0;i<liste.length;i++)
+			{
+				var nameInputValence = "name_valence_"+(i+1);
+
+				var valencesPerAspect = document.getElementsByName(nameInputValence);
+
+				var valence_value;
+
+				
+
+				//formAspectsElt.elements.aspectpsy.value = "";
+
+				for(var ii=0;ii<valencesPerAspect.length;ii++) // Je parcours tous les input
+				{
+					if(valencesPerAspect[ii].checked)
+					{
+						valence_value = valencesPerAspect[ii].value;
+
+						compteur++;
+
+						break;
+					}
+				}
+
+				console.log("valence "+(i+1)+" : "+valence_value);
+			}
+
+			if(compteur===liste.length)
+			{
+				//Tout est rempli
+
+				for(var i=0;i<liste.length;i++)
+				{
+					var nameInputValence = "name_valence_"+(i+1);
+
+					var valencesPerAspect = document.getElementsByName(nameInputValence);
+
+					
+
+					for(var ii=0;ii<valencesPerAspect.length;ii++)
+					{
+						if(valencesPerAspect[ii].checked)
+						{
+							
+							liste[i].valenceAspect = valencesPerAspect[ii].value;
+
+							break;
+						}
+					}
+				}
+
+				console.log("OK");
+
+				liste.forEach(function (aUser) {
+        
+        									console.log(aUser.description());
+    									});
+
+				
+
+				$("#valence").hide();
+
+				document.getElementById("conclusion").style.display = "flex"; 
+
+				formConclusionElt.addEventListener("submit",function(e){
+
+					var emailConclusion = formConclusionElt.elements.nameConclusion.value.trim();
+
+					if( emailConclusion.length !=0 )
+					{
+						$("#motConclusion").hide();
+
+						$("#smileConclusion").hide();
+
+						$("#formConclusion").hide();
+
+
+						$("#remerciementsConclusion").show();
+
+					}else{
+
+						formConclusionElt.elements.nameConclusion.value = "";
+
+						document.getElementById("nameConclusion").focus();
+
+					}
+
+					e.preventDefault();
+				});
+
+			} else{
+
+				//Veuillez choisir une valence pour chaque aspect
+
+				showDialogErrorValence();
+
+			}
+
+			e.preventDefault();
+		});
+
+
 	}
 
 	/**  functions End **/
