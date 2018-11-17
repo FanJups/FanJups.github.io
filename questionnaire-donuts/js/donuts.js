@@ -750,14 +750,30 @@ $(document).ready(function(){
 
 					if( emailConclusion.length !=0 )
 					{
-						$("#motConclusion").hide();
 
-						$("#smileConclusion").hide();
+						//ICI
 
-						$("#formConclusion").hide();
+						if(validateEmail(emailConclusion)===true)
+						{
+							$("#motConclusion").hide();
+
+							$("#smileConclusion").hide();
+
+							$("#formConclusion").hide();
 
 
-						$("#remerciementsConclusion").show();
+							$("#remerciementsConclusion").show();
+
+						}else{
+
+							//INVALID EMAIL
+
+							showDialogErrorEmail();
+
+
+						}
+
+						
 
 					}else{
 
@@ -782,6 +798,33 @@ $(document).ready(function(){
 		});
 
 
+	}
+
+	// DON'T FORGET TO SEND EMAIL TO VERIFY IF IT EXISTS OR NOT
+	function validateEmail(email)
+	{
+		var re1 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		var re2 = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
+    
+    	return re1.test(String(email).toLowerCase());
+
+	}
+
+	function showDialogErrorEmail()
+	{
+		document.getElementById("orange-background").style.display ="block";
+                             	   
+        document.getElementById("dlgboxErrorEmail").style.display ="block";
+
+        $("#closeErrorEmail").click(function(){
+
+        	$("#dlgboxErrorEmail,#orange-background").hide();
+
+
+        });
+                             	   
+       
 	}
 
 	/**  functions End **/
