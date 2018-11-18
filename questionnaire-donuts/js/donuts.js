@@ -177,7 +177,7 @@ $(document).ready(function(){
 
 							var th0_2Elt = document.createElement("th");
 
-							th0_2Elt.textContent ="Ordre importance";
+							th0_2Elt.textContent ="Ordre";
 
 							tr0Elt.appendChild(th0_1Elt);
 
@@ -524,7 +524,7 @@ $(document).ready(function(){
 
 		var th0_2Elt = document.createElement("th");
 
-		th0_2Elt.textContent ="Ordre importance";
+		th0_2Elt.textContent ="Ordre ";
 
 		var th0_3Elt = document.createElement("th");
 
