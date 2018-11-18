@@ -49,6 +49,10 @@ align-items: center;
     font-family: roboto_regular_macroman;
 
     padding-bottom: 0px;
+
+    border: 10px solid transparent;
+
+    border-image: url("../resources/donutsFooter.png") 30 round;
   
 
 }
