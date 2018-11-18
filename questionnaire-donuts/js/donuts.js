@@ -827,10 +827,21 @@ $(document).ready(function(){
        
 	}
 
+	function footerDate()
+	{
+		var date = new Date();
+
+		var fullyear = date.getFullYear();
+
+		document.getElementById("copyrightDonuts").textContent = "donuts-asso © "+fullyear;
+	}
+
 	/**  functions End **/
 
 
 		//En cliquant sur smile, on passe à la 1ère question
+
+		footerDate();  //mise à jour date footer
 
 
 	    $("#smile").click(function(){
