@@ -792,6 +792,12 @@ input
       justify-content: space-between;
       align-items: center;
     }
+
+    #logoDonuts
+    {
+      width: 250px;
+      height: 250px;
+    }
 }
 
 
