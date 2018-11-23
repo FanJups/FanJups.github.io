@@ -79,7 +79,7 @@ align-items: center;
 #nojavascript
 {
   display: none;
-  width: 70%;
+  width: 100%;
 
   margin: auto;
 
@@ -437,7 +437,7 @@ align-items: center;
 
 #presentation
 {
-	width: 70%;
+	width: 100%;
 
 	margin: auto;
 
@@ -497,7 +497,7 @@ align-items: center;
 
 #aspects
 {
-	width: 70%;
+	width: 100%;
 
 	
 
@@ -563,7 +563,7 @@ text-align: center;
 #importance
 {
 	
-width: 70%;
+width: 100%;
 
 margin: auto;
 
@@ -606,7 +606,7 @@ padding-bottom : 10px;
 
 #valence
 {
-  width: 70%;
+  width: 100%;
 
 margin: auto;
 
@@ -647,7 +647,7 @@ padding-bottom : 10px;
 
 #conclusion
 {
-  width: 70%;
+  width: 100%;
   margin: auto;
   flex-direction: column;
   justify-content: space-around;
@@ -753,7 +753,7 @@ input
 
 }
 
-/* Styles pour les écrans moyens et grands*/
+/* Styles pour les écrans moyens et grands OK*/ 
 
 @media (min-width: 992px)
 {
@@ -769,7 +769,7 @@ input
 
 /* Styles pour les smartphones*/
 
-@media(min-width: 991px)
+@media(max-width: 767px)
 {
   
 }
