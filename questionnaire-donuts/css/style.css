@@ -762,16 +762,36 @@ input
 
 /* Styles pour les tablettes*/
 
-@media (min-width: 768px) and (max-width: 991px)
+@media (min-width: 769px) and (max-width: 991px)
 {
   
 }
 
 /* Styles pour les smartphones*/
 
-@media(max-width: 767px)
+@media(max-width: 768px)
 {
-  
+  #footerDonuts
+    {
+      width: 100% ;
+
+      
+
+      background-image: url("../resources/donutsFooter.png"); 
+
+      background-size: 100% 100%;
+
+      color: white;
+
+      font-size: 2em;
+
+      text-align: justify;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
 }
 
 
