@@ -806,7 +806,7 @@ input
 
       color: white;
 
-      font-size: 2em;
+      font-size: 1em; /* valeur précédente : 2em */
 
       text-align: justify;
 
@@ -845,7 +845,7 @@ align-items: center;
 
   
 
-  font-size: 1.5em;
+  font-size: 1em; /* valeur précédente : 1.5em */
 
   
   text-align: center;
@@ -878,7 +878,7 @@ align-items: center;
 
   
 
-  font-size: 1.5em;
+  font-size: 1em; /* valeur précédente : 1.5em */
 
   
   text-align: center;
@@ -915,7 +915,7 @@ align-items: center;
 text-align: center; 
   
 
-  font-size: 1.5em;
+  font-size: 1em; /* valeur précédente : 1.5em */
 
   padding-top: 10px;
 
@@ -945,7 +945,7 @@ border-radius: 20px;
 
 text-align: justify;
   
-font-size: 1.5em;
+font-size: 1em; /* valeur précédente : 1.5em */
 
 overflow-y: auto;
 
@@ -976,7 +976,7 @@ border-radius: 20px;
 
 text-align: justify;
   
-font-size: 1.5em;
+font-size: 1em; /* valeur précédente : 1.5em */
 
 overflow-y: auto;
 
@@ -1000,7 +1000,7 @@ padding-bottom : 10px;
   text-align: center; 
   
 
-  font-size: 1.5em;
+  font-size: 1em; /* valeur précédente : 1.5em */
 
   padding-top: 10px;
 
