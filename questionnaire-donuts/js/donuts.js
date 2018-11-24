@@ -26,9 +26,11 @@ $(document).ready(function(){
 
 	var showConclusion = false;
 
-	var timing = 30;
+	var timing = 50;
 
 	var listeAspectUser =[]; // liste des aspects + importance + valence
+
+	var listeEnfants =[]; 
 
 	/** functions Start **/
 
@@ -50,9 +52,73 @@ $(document).ready(function(){
 
 	/** Fin AspectClass**/
 
+	/** Début EnfantClass**/
+
+	function Enfant(age,sexe)
+	{
+		this.ageEnfant = age;
+		this.sexeEnfant = sexe;
+
+		this.description = function(){
+
+			return "ageEnfant ->"+this.ageEnfant+" sexeEnfant ->"+this.sexeEnfant;
+
+		};
+	}
+
+	/** Fin EnfantClass**/
+
+	/** Début QuestionnaireUserClass**/
+
+	function QuestionnaireUser(listeAspectImportanceValence,souhait,tempsApresOperation,poidsPerdu,satisfactionOperation,sexePersonne,agePersonne,taillePersonne,poidsPersonne,situationFamiliale,listeEnfantsPersonne)
+	{
+		this.listeAspectImportanceValenceUser =listeAspectImportanceValence;
+		this.souhaitUser=souhait;
+		this.tempsApresOperationUser=tempsApresOperation;
+		this.poidsPerduUser =poidsPerdu;
+		this.satisfactionOperationUser=satisfactionOperation;
+		this.sexePersonneUser = sexePersonne;
+		this.agePersonneUser = agePersonne;
+		this.taillePersonneUser=taillePersonne;
+		this.poidsPersonneUser= poidsPersonne;
+		this.situationFamilialeUser= situationFamiliale;
+		this.listeEnfantsPersonneUser = listeEnfantsPersonne;
+
+		this.description=function(){
+
+
+			console.log(this.listeAspectImportanceValenceUser.length+" aspect(s) :");
+
+			this.listeAspectImportanceValenceUser.forEach(function (xUser) {
+        
+        		console.log(xUser.description());
+    		});
+
+    		console.log("Souhait -> "+this.souhaitUser+" tempsApresOperation -> "+this.tempsApresOperationUser+" poidsPerdu -> "+this.poidsPerduUser);
+
+    		console.log("satisfactionOperation -> "+this.satisfactionOperationUser+" sexe -> "+this.sexePersonneUser+" age -> "+this.agePersonneUser);
+
+    		console.log("taille -> "+this.taillePersonneUser+" poids -> "+this.poidsPersonneUser+" situationFamiliale -> "+this.situationFamilialeUser);
+
+    		console.log(this.listeAspectImportanceValenceUser.length+" aspect(s) :");
+
+			this.listeEnfantsPersonneUser.forEach(function (eUser) {
+        
+        		console.log(eUser.description());
+    		});
+
+		};
+
+	}
+
+
+	/** Fin QuestionnaireUserClass**/
+
+
+
 	
 
-	function countDown30()
+	function countDown50()
 	{
 		remplissageFormulaire1(); 
 
@@ -86,7 +152,7 @@ $(document).ready(function(){
 
 			document.getElementById("chrono").textContent = show;
 
-			var countDownTimeOut = setTimeout(countDown30,1000); // Chrono chaque 1 s
+			var countDownTimeOut = setTimeout(countDown50,1000); // Chrono chaque 1 s
 
 			if(timing < 0)
 			{
@@ -100,11 +166,11 @@ $(document).ready(function(){
 
 			if(listeAspects.length === 0)
 			{
-				timing = 30;
+				timing = 50;
 
-				document.getElementById("chrono").textContent = "30 secondes restantes";
+				document.getElementById("chrono").textContent = "50 secondes restantes";
 
-				setTimeout(countDown30,1000); // 1second -> the chrono shows 30 first
+				setTimeout(countDown50,1000); // 1second -> the chrono shows 50 first
 
 				
 
@@ -742,6 +808,8 @@ $(document).ready(function(){
 
 				$("#valence").hide();
 
+				//Q4 à 12
+
 				document.getElementById("conclusion").style.display = "flex"; 
 
 				formConclusionElt.addEventListener("submit",function(e){
@@ -822,7 +890,7 @@ $(document).ready(function(){
         	$("#dlgboxErrorEmail,#orange-background").hide();
 
 
-        });
+        }); 
                              	   
        
 	}
@@ -856,7 +924,7 @@ $(document).ready(function(){
 
 	    	
 
-	    	setTimeout(countDown30,5000); // 5 seconds -> user reading the rules
+	    	setTimeout(countDown50,5000); // 5 seconds -> user reading the rules //Maybe increase with a value bigger than 5 seconds
 
 	    	
         
