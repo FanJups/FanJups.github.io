@@ -785,6 +785,41 @@ input
       justify-content: space-between;
       align-items: center;
     }
+	
+
+	#nojavascript
+{
+  display: none;
+  width: 100%;
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  
+
+  font-size: 2em;
+
+  
+  text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
 
     
   
