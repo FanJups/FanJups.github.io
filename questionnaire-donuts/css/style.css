@@ -79,7 +79,7 @@ align-items: center;
 #nojavascript
 {
   display: none;
-  width: 70%;
+  width: 100%;
 
   margin: auto;
 
@@ -131,7 +131,7 @@ align-items: center;
   	display:none;
   
    
-    width:600px;
+    
     z-index:999999;
     border-radius:10px;
     
@@ -193,7 +193,7 @@ align-items: center;
     display:none ;
   
    
-    width:600px !important;
+    
     z-index:999999999999999 !important;
     border-radius:10px !important;
     
@@ -253,7 +253,7 @@ align-items: center;
     display:none ;
   
    
-    width:600px !important;
+    
     z-index:999999999999 !important;
     border-radius:10px !important;
     
@@ -314,7 +314,7 @@ align-items: center;
 
    
    
-    width:600px;
+    
     z-index:99999999999 ;
     border-radius:10px ;
     
@@ -374,7 +374,7 @@ align-items: center;
     display:none ;
   
    
-    width:600px !important;
+    
     z-index:99999999999 !important;
     border-radius:10px !important;
     
@@ -437,7 +437,7 @@ align-items: center;
 
 #presentation
 {
-	width: 70%;
+	width: 100%;
 
 	margin: auto;
 
@@ -497,7 +497,7 @@ align-items: center;
 
 #aspects
 {
-	width: 70%;
+	width: 100%;
 
 	
 
@@ -563,7 +563,7 @@ text-align: center;
 #importance
 {
 	
-width: 70%;
+width: 100%;
 
 margin: auto;
 
@@ -606,7 +606,7 @@ padding-bottom : 10px;
 
 #valence
 {
-  width: 70%;
+  width: 100%;
 
 margin: auto;
 
@@ -645,9 +645,49 @@ padding-bottom : 10px;
   text-align: justify;
 }
 
+table{
+        
+        border: 0.2em solid;
+        border-collapse:collapse ;
+        text-align:center;
+        
+        
+        
+        }
+        
+        th{
+        border: 0.1em solid white;
+        text-align:center;
+        padding:2em;
+        background-color:#e45a0c;
+        color: white;
+        
+        }
+        
+        td{
+        border: 0.1em solid #e45a0c;
+        text-align:center;
+        padding:1em;
+        
+        }
+        
+        tr{
+        
+        }
+        
+        table tr:nth-child(even){
+        
+        background-color:#eee;
+        }
+        
+        table tr:nth-child(odd){
+        
+        background-color:#fff;
+        }
+
 #conclusion
 {
-  width: 70%;
+  width: 100%;
   margin: auto;
   flex-direction: column;
   justify-content: space-around;
@@ -753,7 +793,7 @@ input
 
 }
 
-/* Styles pour les écrans moyens et grands*/
+/* Styles pour les écrans moyens et grands OK*/ 
 
 @media (min-width: 992px)
 {
@@ -762,16 +802,257 @@ input
 
 /* Styles pour les tablettes*/
 
-@media (min-width: 768px) and (max-width: 991px)
+@media (min-width: 769px) and (max-width: 991px)
 {
+    #footerDonuts
+    {
+      width: 100% ;
+
+      
+
+      background-image: url("../resources/donutsFooter.png"); 
+
+      background-size: 100% 100%;
+
+      color: white;
+
+      font-size: 2em;
+
+      text-align: justify;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    
   
 }
 
 /* Styles pour les smartphones*/
 
-@media(min-width: 991px)
+@media(max-width: 768px)
+{
+  #footerDonuts
+    {
+      width: 100% ;
+
+      
+
+      background-image: url("../resources/donutsFooter.png"); 
+
+      background-size: 100% 100%;
+
+      color: white;
+
+      font-size: 1em; /* valeur précédente : 2em */
+
+      text-align: justify;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #logoDonuts
+    {
+      width: 250px;
+      height: 250px;
+    }
+
+    #nojavascript
+{
+  display: none;
+  width: 100%;
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  
+  text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+
+#presentation
+{
+  width: 100%;
+
+  margin: auto;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  
+  text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#aspects
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#importance
 {
   
+width: 100%;
+
+margin: auto;
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+
+
+border: 10px #e45a0c outset;
+
+border-radius: 20px;
+
+text-align: justify;
+  
+font-size: 1em; /* valeur précédente : 1.5em */
+
+overflow-y: auto;
+
+padding-top: 10px;
+
+padding-bottom : 10px;
+
+
+}
+
+#valence
+{
+  width: 100%;
+
+margin: auto;
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+
+
+border: 10px #e45a0c outset;
+
+border-radius: 20px;
+
+text-align: justify;
+  
+font-size: 1em; /* valeur précédente : 1.5em */
+
+overflow-y: auto;
+
+padding-top: 10px;
+
+padding-bottom : 10px;
+}
+
+#conclusion
+{
+  width: 100%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+
+
+
+
+
+
 }
 
 
