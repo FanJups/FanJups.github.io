@@ -645,6 +645,46 @@ padding-bottom : 10px;
   text-align: justify;
 }
 
+table{
+        
+        border: 0.2em solid;
+        border-collapse:collapse ;
+        text-align:center;
+        
+        
+        
+        }
+        
+        th{
+        border: 0.1em solid white;
+        text-align:center;
+        padding:2em;
+        background-color:#e45a0c;
+        color: white;
+        
+        }
+        
+        td{
+        border: 0.1em solid #e45a0c;
+        text-align:center;
+        padding:1em;
+        
+        }
+        
+        tr{
+        
+        }
+        
+        table tr:nth-child(even){
+        
+        background-color:#eee;
+        }
+        
+        table tr:nth-child(odd){
+        
+        background-color:#fff;
+        }
+
 #conclusion
 {
   width: 100%;
