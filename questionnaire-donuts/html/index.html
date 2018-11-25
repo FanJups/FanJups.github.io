@@ -47,6 +47,8 @@ date : samedi 03 novembre 2018
 
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.css" type="text/css" />
 
+    <link rel="stylesheet" href="../jquery-ui/jquery-ui.css" type="text/css" />
+
     <link rel="icon" href="../resources/logo.png">
 
     <link rel="shortcut icon" type="image/x-icon" href="../resources/logo.ico">
@@ -469,6 +471,81 @@ date : samedi 03 novembre 2018
 
 		</div>
 
+		<!-- avez vous déjà été opérée ? -->
+
+		<div id="operation" class="row"> 
+
+			<div class="col-xs-12">
+
+				<p>
+
+					<span>5 / 12 )</span> Avez-vous déjà été opérée ? Si oui, une date exacte ou approximative sera nécessaire.
+					
+				</p>
+
+				<br>
+
+				<form id="formOperation">
+
+					<fieldset>
+
+						<div  class="form-group">
+
+							<input type="radio" name="nameOperation" value="Oui" id="ouiOperation">
+							<label for="ouiOperation">Oui</label>
+
+							<br>
+
+							
+
+							<input type="radio" name="nameOperation" value="Non" id="nonOperation">
+							<label for="nonOperation">Non</label>
+
+							
+						</div>
+
+						<br>
+
+						<button  type="submit" class="btn btn-warning">Envoyer</button>
+
+						<br>
+
+						<span id="aucunChoixOperation"> S'il vous plaît, cliquez sur Oui ou Non.</span>
+						
+
+					</fieldset>
+					
+
+				</form>
+
+				<form id="formOperationDate">
+
+					<fieldset>
+
+						<div  class="form-group">
+
+							
+
+							<input type="text" name="dateOperation" id="dateOperation" maxlength="0" class="form-control  " placeholder="Quand ?" size="60"  required>
+							
+
+						</div>
+
+						<button  type="submit" class="btn btn-warning">Envoyer</button>
+						
+
+					</fieldset>
+					
+
+				</form>
+				
+
+			</div>
+			
+
+
+		</div>
+
 		<!-- conclusion -->
 
 		<div id="conclusion"  class="row">
@@ -646,7 +723,9 @@ align-items: center;
 
     <!--Jquery-->
     
-    <script src="../js/jquery-3.3.1.js"></script> 
+    <script src="../js/jquery-3.3.1.js"></script>
+
+    <script src="../jquery-ui/jquery-ui.js"></script> 
 
     <script src="../js/donuts.js"></script> 
 
