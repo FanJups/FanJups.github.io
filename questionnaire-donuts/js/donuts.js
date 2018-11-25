@@ -14,6 +14,10 @@ $(document).ready(function(){
 
 	var formprotocoleChirurgieObesiteElt = document.getElementById("formprotocoleChirurgieObesite") ;
 
+	var formOperationElt = document.getElementById("formOperation") ;
+
+	var formOperationDateElt = document.getElementById("formOperationDate") ;
+
 	var formConclusionElt = document.getElementById("formConclusion") ;
 
 	var listeAspects =[];
@@ -33,6 +37,42 @@ $(document).ready(function(){
 	var timing = 40;
 
 	var listeAspectUser =[]; // liste des aspects + importance + valence
+
+	//Working on surgery date
+
+	$(function(){
+
+		$( "#dateOperation" ).datepicker({
+            altField: "#dateOperation",
+            closeText: 'Fermer',
+            prevText: 'Précédent',
+            nextText: 'Suivant',
+            currentText: 'Aujourd\'hui',
+            monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+            monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+            dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+            dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+            dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+            weekHeader: 'Sem.',
+            firstDay: 1 ,
+            dateFormat: 'd/m/yy',
+            maxDate:'+0d',
+            showOtherMonths:true,
+            selectOtherMonths:true,
+            changeMonth:true,
+            changeYear:true,
+            numberOfMonths:4
+
+        });
+
+
+	});
+
+	$(function() {
+
+		$( "#dateOperation" ).datepicker();
+                                                                                                                            	               
+    });
 
 	
 
@@ -844,7 +884,93 @@ $(document).ready(function(){
 
 						//ICI
 
-						conclusionAppears();
+						document.getElementById("operation").style.display = "flex";
+
+
+						formOperationElt.addEventListener("submit",function(e){
+
+							var verifyOperation=0;
+
+						var operationRadioElts = document.getElementsByName("nameOperation");
+
+						for(var i=0;i<operationRadioElts.length;i++)
+						{
+							if(operationRadioElts[i].checked)
+							{
+								verifyOperation++;
+
+								break;
+							}
+
+						}
+
+						if(verifyOperation>0)
+						{
+
+							for(var i=0;i<operationRadioElts.length;i++)
+							{
+								if(operationRadioElts[i].checked)
+								{
+									finalUser.isOperationUser = operationRadioElts[i].value; // ATTRIBUT 3 OBJET FINAL
+
+									break;
+								}
+
+							}
+
+							
+
+							if(finalUser.isOperationUser==="Oui")
+							{
+
+								
+
+								document.getElementById("formOperation").style.display = "none";
+
+								document.getElementById("formOperationDate").style.display = "block";
+
+								formOperationDateElt.addEventListener("submit",function(e){
+
+
+
+									e.preventDefault();
+								});
+
+								//finalUser.dateOperationUser=;
+
+								//Combien de poids perdu ?
+
+								//conclusionAppears();
+
+							}else{ // finalUser.isOperationUser==="Non"
+
+								
+
+								document.getElementById("operation").style.display = "none";
+
+								finalUser.dateOperationUser="";
+
+								//Sexe
+
+								conclusionAppears();
+							}
+
+						}else{
+
+							//rien de cocher erreur
+
+							
+
+							$("#aucunChoixOperation").show();
+
+							
+						}
+
+							
+
+							e.preventDefault();
+						});
+	
 
 
 					}
