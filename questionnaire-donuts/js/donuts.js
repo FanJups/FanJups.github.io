@@ -61,7 +61,7 @@ $(document).ready(function(){
             selectOtherMonths:true,
             changeMonth:true,
             changeYear:true,
-            numberOfMonths:4
+            numberOfMonths:1
 
         });
 
