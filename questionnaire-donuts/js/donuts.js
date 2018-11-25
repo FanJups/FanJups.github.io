@@ -2,13 +2,17 @@
 
 $(document).ready(function(){
 
+
+
 	
 
-	var formAspectsElt;
+	var formAspectsElt; 
 
 	var formAspectsImportanceElt = document.getElementById("formAspects&Importance") ; 
 
 	var formAspectsValenceElt = document.getElementById("formAspects&Valence") ;
+
+	var formprotocoleChirurgieObesiteElt = document.getElementById("formprotocoleChirurgieObesite") ;
 
 	var formConclusionElt = document.getElementById("formConclusion") ;
 
@@ -113,6 +117,8 @@ $(document).ready(function(){
 
 
 	/** Fin QuestionnaireUserClass**/
+
+	var finalUser = new QuestionnaireUser("","","","","","","","","","","");
 
 
 
@@ -808,9 +814,124 @@ $(document).ready(function(){
 
 				$("#valence").hide();
 
+				finalUser.listeAspectImportanceValenceUser = liste; // ATTRIBUT 1 OBJET FINAL
+
 				//Q4 à 12
 
-				document.getElementById("conclusion").style.display = "flex"; 
+				//Q4
+
+				
+
+				document.getElementById("protocoleChirurgieObesite").style.display = "flex";
+
+				formprotocoleChirurgieObesiteElt.addEventListener("submit",function(e){
+
+					var verifyprotocoleChirurgieObesite=0;
+
+					
+
+					var protocoleChirurgieObesiteRadioElts = document.getElementsByName("nameprotocoleChirurgieObesite");
+
+					for(var i=0;i<protocoleChirurgieObesiteRadioElts.length;i++)
+					{
+						if(protocoleChirurgieObesiteRadioElts[i].checked)
+						{
+							verifyprotocoleChirurgieObesite++;
+
+							finalUser.souhaitUser = protocoleChirurgieObesiteRadioElts[i].value; // ATTRIBUT 2 OBJET FINAL
+
+
+							break;
+						}
+					}
+
+					if(verifyprotocoleChirurgieObesite ===0)
+					{
+						//Rien de cocher -> erreur
+
+						showDialogErrorProtocoleChirurgie();
+
+					}else{
+
+						
+
+						console.log("envisager: "+finalUser.souhaitUser);
+
+						$("#protocoleChirurgieObesite").hide();
+
+						//ICI
+
+						conclusionAppears();
+
+
+					}
+
+
+
+					e.preventDefault();
+				});
+
+
+			} else{
+
+				//Veuillez choisir une valence pour chaque aspect
+
+				showDialogErrorValence();
+
+			}
+
+			e.preventDefault();
+		});
+
+
+	}
+
+	// DON'T FORGET TO SEND EMAIL TO VERIFY IF IT EXISTS OR NOT
+	function validateEmail(email)
+	{
+		var re1 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		var re2 = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
+    
+    	return re1.test(String(email).toLowerCase());
+
+	}
+
+	function showDialogErrorEmail()
+	{
+		document.getElementById("orange-background").style.display ="block";
+                             	   
+        document.getElementById("dlgboxErrorEmail").style.display ="block";
+
+        $("#closeErrorEmail").click(function(){
+
+        	$("#dlgboxErrorEmail,#orange-background").hide();
+
+
+        }); 
+                             	   
+       
+	}
+
+	function showDialogErrorProtocoleChirurgie()
+	{
+		document.getElementById("orange-background").style.display ="block";
+                             	   
+        document.getElementById("dlgboxErrorProtocoleChirurgie").style.display ="block";
+
+        $("#closeErrorProtocoleChirurgie").click(function(){
+
+        	$("#dlgboxErrorProtocoleChirurgie,#orange-background").hide();
+
+
+        }); 
+                             	   
+       
+	}
+
+	function conclusionAppears()
+	{
+		document.getElementById("conclusion").style.display = "flex"; 
 
 				formConclusionElt.addEventListener("submit",function(e){
 
@@ -853,46 +974,6 @@ $(document).ready(function(){
 
 					e.preventDefault();
 				});
-
-			} else{
-
-				//Veuillez choisir une valence pour chaque aspect
-
-				showDialogErrorValence();
-
-			}
-
-			e.preventDefault();
-		});
-
-
-	}
-
-	// DON'T FORGET TO SEND EMAIL TO VERIFY IF IT EXISTS OR NOT
-	function validateEmail(email)
-	{
-		var re1 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-		var re2 = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
-    
-    	return re1.test(String(email).toLowerCase());
-
-	}
-
-	function showDialogErrorEmail()
-	{
-		document.getElementById("orange-background").style.display ="block";
-                             	   
-        document.getElementById("dlgboxErrorEmail").style.display ="block";
-
-        $("#closeErrorEmail").click(function(){
-
-        	$("#dlgboxErrorEmail,#orange-background").hide();
-
-
-        }); 
-                             	   
-       
 	}
 
 	function footerDate()
