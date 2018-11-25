@@ -8,7 +8,7 @@ date : samedi 03 novembre 2018
 
 -->
 
-<!DOCTYPE html>  
+<!DOCTYPE html>   
 
 <html>
 
@@ -182,6 +182,28 @@ date : samedi 03 novembre 2018
 
 					</div>
 
+					<!-- Pop up protocole chirurgie obésité , rien de cocher -->
+
+					<div id="dlgboxErrorProtocoleChirurgie" class="col-xs-12">
+
+						<div id="dlgheaderErrorProtocoleChirurgie">Erreur : aucun choix</div>
+
+						<div id="dlgbodyErrorProtocoleChirurgie">
+							
+							
+							 
+
+						</div>
+
+						<div id="dlgfooterErrorProtocoleChirurgie">
+							
+						<strong style=" font-size: 2em ; "> <i id="closeErrorProtocoleChirurgie"  class="fa fa-close smile_close_presentation" aria-hidden="true"></i></strong>
+
+						</div>
+						
+
+					</div>
+
 		<!-- Fin pop up -->
 
 
@@ -234,7 +256,7 @@ date : samedi 03 novembre 2018
 			<div class="col-xs-12">
 
 				<p>
-					&nbsp; &nbsp; Nous vous remercions de prendre votre précieux temps pour répondre à ce questionnaire. Il est constitué de <span>3</span> étapes permettant de cerner l'impact psychologique sur la prise de poids. S'il vous plaît, veuillez sourire en cliquant sur le bouton ci-dessous pour remplir le questionnaire.
+					&nbsp; &nbsp; Nous vous remercions de prendre votre précieux temps pour répondre à ce questionnaire. Il est constitué de <span>12</span> étapes permettant de cerner l'impact psychologique sur la prise de poids. S'il vous plaît, veuillez sourire en cliquant sur le bouton ci-dessous pour remplir le questionnaire.
 
 				</p>
 
@@ -256,12 +278,12 @@ date : samedi 03 novembre 2018
 			<div class="col-xs-12">
 
 				<p>
-				<span>1 / 3 )</span> Quels sont, selon vous, les aspects de votre vie les plus impactés par votre poids ? Indiquez un maximum d’aspects de votre vie qui peuvent se retrouver impacter par votre poids en 30 secondes. Pour valider chaque aspect, il faut cliquer sur envoyer.
+				<span>1 / 12 )</span> Quels sont, selon vous, les aspects de votre vie les plus impactés par votre poids ? Indiquez un maximum d’aspects de votre vie qui peuvent se retrouver impacter par votre poids en 50 secondes. Pour valider chaque aspect, il faut cliquer sur envoyer.
 				</p>
 
 				<div id="chrono">
 
-					30 secondes restantes
+					50 secondes restantes
 					
 
 				</div> 
@@ -311,7 +333,7 @@ date : samedi 03 novembre 2018
 
 				<p>
 					
-					<span>2 / 3 )</span> Classez du plus important au moins important les aspects que vous avez inscrits précédemment (1 = le plus important).
+					<span>2 / 12 )</span> Classez du plus important au moins important les aspects que vous avez inscrits précédemment (1 = le plus important).
 				</p>
 				<br>
 
@@ -358,7 +380,7 @@ date : samedi 03 novembre 2018
 			<div class="col-xs-12">
 
 				<p>
-					<span>3 / 3 )</span> Indiquez si chaque aspect est affecté positivement ou négativement par votre poids.
+					<span>3 / 12 )</span> Indiquez si chaque aspect est affecté positivement ou négativement par votre poids.
 
 				</p>
 
@@ -393,6 +415,57 @@ date : samedi 03 novembre 2018
 
 			</div>
 	
+
+		</div>
+
+		<!-- protocole chirurgie obésité -->
+
+		<div id="protocoleChirurgieObesite" class="row"> 
+
+			<div class="col-xs-12">
+
+				<p>
+
+					<span>4 / 12 )</span> Avez-vous déjà envisagé de rentrer dans le protocole de chirurgie de l'obésité (anneau péri-gastrique, Sleeve ou Bypass) ?
+					
+				</p>
+
+				<br>
+
+				<form id="formprotocoleChirurgieObesite">
+
+					<fieldset>
+
+						<div  class="form-group">
+
+							<input type="radio" name="nameprotocoleChirurgieObesite" value="Oui (J'ai entrepris des démarches.)" id="oui1">
+							<label for="oui1">Oui (J'ai entrepris des démarches)</label>
+
+							<br>
+
+							<input type="radio" name="nameprotocoleChirurgieObesite" value="Oui (Je n'ai pas entrepris de démarche.)" id="oui2">
+							<label for="oui2">Oui (Je n'ai pas entrepris de démarche)</label>
+
+							<br>
+
+							<input type="radio" name="nameprotocoleChirurgieObesite" value="Non" id="non">
+							<label for="non">Non</label>
+							
+
+						</div>
+
+						<button type="submit" class="btn btn-warning">Envoyer</button>
+						
+
+					</fieldset>
+					
+
+				</form>
+				
+
+			</div>
+			
+
 
 		</div>
 
