@@ -492,7 +492,7 @@ align-items: center;
 
   
 
-#aspects,#importance,#valence,#protocoleChirurgieObesite,#conclusion 
+#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#conclusion 
 {
 	display: none;
 }
@@ -795,6 +795,60 @@ text-align: center;
   color:#e45a0c;
 }
 
+#operation
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#operation p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#operation span
+{
+  color:#e45a0c;
+}
+
+#aucunChoixOperation
+{
+  display: none;
+}
+
+#formOperationDate
+{
+  display: none;
+}
 
 
 #conclusion
@@ -1138,6 +1192,40 @@ padding-bottom : 10px;
 }
 
 #protocoleChirurgieObesite
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#operation
 {
   width: 100%;
 
