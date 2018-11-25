@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 	var listeAspectUser =[]; // liste des aspects + importance + valence
 
-	var listeEnfants =[]; 
+	
 
 	/** functions Start **/
 
@@ -56,29 +56,16 @@ $(document).ready(function(){
 
 	/** Fin AspectClass**/
 
-	/** Début EnfantClass**/
-
-	function Enfant(age,sexe)
-	{
-		this.ageEnfant = age;
-		this.sexeEnfant = sexe;
-
-		this.description = function(){
-
-			return "ageEnfant ->"+this.ageEnfant+" sexeEnfant ->"+this.sexeEnfant;
-
-		};
-	}
-
-	/** Fin EnfantClass**/
+	
 
 	/** Début QuestionnaireUserClass**/
 
-	function QuestionnaireUser(listeAspectImportanceValence,souhait,tempsApresOperation,poidsPerdu,satisfactionOperation,sexePersonne,agePersonne,taillePersonne,poidsPersonne,situationFamiliale,listeEnfantsPersonne)
+	function QuestionnaireUser(listeAspectImportanceValence,souhait,isOperation,dateOperation,poidsPerdu,satisfactionOperation,sexePersonne,agePersonne,taillePersonne,poidsPersonne,situationFamiliale,isEnfants,nbreEnfants)
 	{
 		this.listeAspectImportanceValenceUser =listeAspectImportanceValence;
 		this.souhaitUser=souhait;
-		this.tempsApresOperationUser=tempsApresOperation;
+		this.isOperationUser=isOperation;
+		this.dateOperationUser=dateOperation;
 		this.poidsPerduUser =poidsPerdu;
 		this.satisfactionOperationUser=satisfactionOperation;
 		this.sexePersonneUser = sexePersonne;
@@ -86,7 +73,8 @@ $(document).ready(function(){
 		this.taillePersonneUser=taillePersonne;
 		this.poidsPersonneUser= poidsPersonne;
 		this.situationFamilialeUser= situationFamiliale;
-		this.listeEnfantsPersonneUser = listeEnfantsPersonne;
+		this.isEnfantsUser = isEnfants;
+		this.nbreEnfantsUser = nbreEnfants;
 
 		this.description=function(){
 
@@ -98,18 +86,13 @@ $(document).ready(function(){
         		console.log(xUser.description());
     		});
 
-    		console.log("Souhait -> "+this.souhaitUser+" tempsApresOperation -> "+this.tempsApresOperationUser+" poidsPerdu -> "+this.poidsPerduUser);
+    		console.log("Souhait -> "+this.souhaitUser+" isOperation -> "+this.isOperationUser+" dateOperation -> "+this.dateOperationUser+" poidsPerdu -> "+this.poidsPerduUser);
 
     		console.log("satisfactionOperation -> "+this.satisfactionOperationUser+" sexe -> "+this.sexePersonneUser+" age -> "+this.agePersonneUser);
 
     		console.log("taille -> "+this.taillePersonneUser+" poids -> "+this.poidsPersonneUser+" situationFamiliale -> "+this.situationFamilialeUser);
 
-    		console.log(this.listeAspectImportanceValenceUser.length+" aspect(s) :");
-
-			this.listeEnfantsPersonneUser.forEach(function (eUser) {
-        
-        		console.log(eUser.description());
-    		});
+    		console.log("isEnfants -> "+this.isEnfantsUser+" nbreEnfants -> "+this.nbreEnfantsUser);
 
 		};
 
@@ -118,7 +101,7 @@ $(document).ready(function(){
 
 	/** Fin QuestionnaireUserClass**/
 
-	var finalUser = new QuestionnaireUser("","","","","","","","","","","");
+	var finalUser = new QuestionnaireUser("","","","","","","","","","","","","");
 
 
 
