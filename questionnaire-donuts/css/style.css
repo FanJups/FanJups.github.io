@@ -428,7 +428,71 @@ align-items: center;
   
   }
 
-#aspects,#importance,#valence,#conclusion 
+  
+
+    #dlgboxErrorProtocoleChirurgie 
+  {
+
+    display:none ;
+  
+   
+    
+    z-index:99999999999 !important;
+    border-radius:10px !important;
+    
+    
+  
+    border: 10px #e59b10 groove !important;
+
+    padding:5px !important;
+
+     /*Centered*/
+
+
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  }
+
+  #dlgheaderErrorProtocoleChirurgie
+  {
+    background-color:#e59b10 !important;
+  color:white !important;
+  font-size:20px !important;
+  padding:10px !important;
+  margin: 10px 10px 0px 10px !important;
+  text-align: center !important;
+  }
+
+  #dlgbodyErrorProtocoleChirurgie
+  {
+    background-color:white !important;
+  
+  color:black !important;
+  
+  font-size:14px !important;
+  
+  padding:10px !important;
+  
+  margin:0px 10px 0px 10px !important;
+  
+  }
+
+  #dlgfooterErrorProtocoleChirurgie
+  {
+    background-color:#f2f2f2 !important;
+  
+  text-align:center !important;
+  padding:10px !important;
+  margin:0px 10px 10px 10px !important;
+  
+  }
+
+  
+
+#aspects,#importance,#valence,#protocoleChirurgieObesite,#conclusion 
 {
 	display: none;
 }
@@ -665,7 +729,7 @@ table{
         }
         
         td{
-        border: 0.1em solid #e45a0c;
+        border: 0.1em solid #e45a0c; 
         text-align:center;
         padding:1em;
         
@@ -684,6 +748,54 @@ table{
         
         background-color:#fff;
         }
+
+        #protocoleChirurgieObesite
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 2em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#protocoleChirurgieObesite p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#protocoleChirurgieObesite span
+{
+  color:#e45a0c;
+}
+
+
 
 #conclusion
 {
@@ -810,7 +922,7 @@ input
 
       
 
-      background-image: url("../resources/donutsFooter.png"); 
+      background-image: url("../resources/donutsFooter.png");  
 
       background-size: 100% 100%;
 
@@ -1023,6 +1135,40 @@ overflow-y: auto;
 padding-top: 10px;
 
 padding-bottom : 10px;
+}
+
+#protocoleChirurgieObesite
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
 }
 
 #conclusion
