@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 	var showConclusion = false;
 
-	var timing = 50;
+	var timing = 40;
 
 	var listeAspectUser =[]; // liste des aspects + importance + valence
 
@@ -124,7 +124,7 @@ $(document).ready(function(){
 
 	
 
-	function countDown50()
+	function countDown40()
 	{
 		remplissageFormulaire1(); 
 
@@ -158,7 +158,7 @@ $(document).ready(function(){
 
 			document.getElementById("chrono").textContent = show;
 
-			var countDownTimeOut = setTimeout(countDown50,1000); // Chrono chaque 1 s
+			var countDownTimeOut = setTimeout(countDown40,1000); // Chrono chaque 1 s
 
 			if(timing < 0)
 			{
@@ -172,11 +172,11 @@ $(document).ready(function(){
 
 			if(listeAspects.length === 0)
 			{
-				timing = 50;
+				timing = 40;
 
-				document.getElementById("chrono").textContent = "50 secondes restantes";
+				document.getElementById("chrono").textContent = "40 secondes restantes";
 
-				setTimeout(countDown50,1000); // 1second -> the chrono shows 50 first
+				setTimeout(countDown40,1000); // 1second -> the chrono shows 40 first
 
 				
 
@@ -1005,7 +1005,7 @@ $(document).ready(function(){
 
 	    	
 
-	    	setTimeout(countDown50,5000); // 5 seconds -> user reading the rules //Maybe increase with a value bigger than 5 seconds
+	    	setTimeout(countDown40,20000); // 20 seconds -> user reading the rules //Maybe increase with a value bigger than 5 seconds
 
 	    	
         
