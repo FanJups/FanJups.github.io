@@ -492,7 +492,7 @@ align-items: center;
 
   
 
-#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#conclusion 
+#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#poidsPerdu,#conclusion 
 {
 	display: none;
 }
@@ -845,7 +845,62 @@ text-align: center;
   display: none;
 }
 
+#aucuneDateOperation
+{
+  display: none;
+}
+
 #formOperationDate
+{
+  display: none;
+}
+
+#poidsPerdu
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#poidsPerdu p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#poidsPerdu span
+{
+  color:#e45a0c;
+}
+
+#aucunPoidsPerdu
 {
   display: none;
 }
@@ -1226,6 +1281,40 @@ text-align: center;
 }
 
 #operation
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#poidsPerdu
 {
   width: 100%;
 
