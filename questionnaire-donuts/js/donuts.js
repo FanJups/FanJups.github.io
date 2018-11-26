@@ -18,6 +18,8 @@ $(document).ready(function(){
 
 	var formOperationDateElt = document.getElementById("formOperationDate") ;
 
+	var formPoidsPerduElt = document.getElementById("formPoidsPerdu") ;
+
 	var formConclusionElt = document.getElementById("formConclusion") ;
 
 	var listeAspects =[];
@@ -882,7 +884,7 @@ $(document).ready(function(){
 
 						$("#protocoleChirurgieObesite").hide();
 
-						//ICI
+						
 
 						document.getElementById("operation").style.display = "flex";
 
@@ -930,6 +932,61 @@ $(document).ready(function(){
 								document.getElementById("formOperationDate").style.display = "block";
 
 								formOperationDateElt.addEventListener("submit",function(e){
+
+									var dateUser = formOperationDateElt.elements.dateOperation.value.trim();
+
+									if(dateUser.length !=0)
+									{
+										//Why not verifying if dateUser repects regex nn/nn/nnnn ? Think about it !
+
+										finalUser.dateOperationUser=dateUser;  // ATTRIBUT 4 OBJET FINAL
+
+										$("#operation").hide();
+
+										document.getElementById("poidsPerdu").style.display = "flex";
+
+										formPoidsPerduElt.addEventListener("submit",function(e){
+
+											var poidsPerduDonuts = formPoidsPerduElt.elements.namePoidsPerdu.value.trim();
+
+											if(poidsPerduDonuts.length !=0)
+											{
+												var poidsPerduDonutsInt = parseInt(poidsPerduDonuts);
+
+												finalUser.poidsPerduUser = poidsPerduDonutsInt;   // ATTRIBUT 5 OBJET FINAL
+
+												$("#poidsPerdu").hide();
+
+
+
+												
+
+												//ICI
+
+											}else{
+
+												$("#aucunPoidsPerdu").show();
+
+
+											}
+
+
+
+
+											e.preventDefault();
+										});
+
+
+
+
+
+									}else{
+
+										$("#aucuneDateOperation").show();
+
+
+
+									}
 
 
 
