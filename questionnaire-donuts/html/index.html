@@ -280,7 +280,7 @@ date : samedi 03 novembre 2018
 			<div class="col-xs-12">
 
 				<p>
-				<span>1 / 12 )</span> Quels sont, selon vous, les aspects de votre vie les plus impactés par votre poids ? Indiquez un maximum d’aspects de votre vie qui peuvent se retrouver impacter par votre poids en 40 secondes. Le chronomètre se déclenchera dans 20 secondes. Pour valider chaque aspect, il faut cliquer sur envoyer.
+				<span>1 / 12 )</span> Quels sont, selon vous, les aspects de votre vie les plus impactés par votre poids ? Indiquez un maximum d’aspects de votre vie qui peuvent se retrouver impacter par votre poids en 40 secondes. Le chronomètre se déclenchera dans 20 secondes dans le but de vous donner quelques instants de réflexion. Pour valider chaque aspect, il faut cliquer sur envoyer.
 				</p>
 
 				<div id="chrono">
@@ -292,7 +292,7 @@ date : samedi 03 novembre 2018
 
 				<br>
 
-				<form id="formAspects" class="form-inline"> 
+				<form id="formAspects" > 
 
 					<fieldset>
 
@@ -479,7 +479,7 @@ date : samedi 03 novembre 2018
 
 				<p>
 
-					<span>5 / 12 )</span> Avez-vous déjà été opérée ? Si oui, une date exacte ou approximative sera nécessaire.
+					<span>5 / 12 )</span> Avez-vous déjà été opérée ? Si oui, une date exacte ou approximative est nécessaire.
 					
 				</p>
 
@@ -506,14 +506,14 @@ date : samedi 03 novembre 2018
 
 						<br>
 
-						<button  type="submit" class="btn btn-warning">Envoyer</button>
+						<button  type="submit" class="btn btn-warning">Envoyer</button> 
 
 						<br>
 
-						<span id="aucunChoixOperation"> S'il vous plaît, cliquez sur Oui ou Non.</span>
+						<span id="aucunChoixOperation"> S'il vous plaît, il faut cliquer sur Oui ou Non.</span>
 						
 
-					</fieldset>
+					</fieldset> 
 					
 
 				</form>
@@ -526,12 +526,64 @@ date : samedi 03 novembre 2018
 
 							
 
-							<input type="text" name="dateOperation" id="dateOperation" maxlength="0" class="form-control  " placeholder="Quand ?" size="60"  required>
+							<input type="text" name="dateOperation" id="dateOperation" maxlength="0" class="form-control  " placeholder="Quand ?" size="60" required >
 							
 
 						</div>
 
 						<button  type="submit" class="btn btn-warning">Envoyer</button>
+
+						<br>
+
+						<span id="aucuneDateOperation"> S'il vous plaît, il faut choisir une date.</span>
+						
+
+					</fieldset>
+					
+
+				</form>
+				
+
+			</div>
+			
+
+
+		</div>
+
+		<!-- poids perdu  -->
+
+		<div id="poidsPerdu" class="row"> 
+
+			<div class="col-xs-12">
+
+				<p>
+
+					<span>6 / 12 )</span> Combien de poids (en kg) avez-vous perdu ? Une quantité exacte ou approximative est nécessaire.
+					
+				</p>
+
+				<br>
+
+				
+
+				<form id="formPoidsPerdu">
+
+					<fieldset>
+
+						<div  class="form-group">
+
+							
+
+							<input type="number" name="namePoidsPerdu" id="namePoidsPerdu" class="form-control  " placeholder="poids perdu" size="60" required>
+							
+
+						</div>
+
+						<button  type="submit" class="btn btn-warning">Envoyer</button>
+
+						<br>
+
+						<span id="aucunPoidsPerdu"> S'il vous plaît, il faut saisir une quantité.</span>
 						
 
 					</fieldset>
