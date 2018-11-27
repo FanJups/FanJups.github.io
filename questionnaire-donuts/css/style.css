@@ -125,7 +125,7 @@ align-items: center;
   
   }
 
-  #dlgbox
+  #dlgbox,#dlgbox8
   {
 
   	display:none;
@@ -151,7 +151,7 @@ align-items: center;
   transform: translate(-50%, -50%);
   }
 
-  #dlgheader
+  #dlgheader,#dlgheader8
   {
   	background-color:#e59b10;
   color:white;
@@ -161,7 +161,7 @@ align-items: center;
   text-align: center;
   }
 
-  #dlgbody
+  #dlgbody,#dlgbody8
   {
   	background-color:white;
   
@@ -175,7 +175,7 @@ align-items: center;
   display: none;
   }
 
-  #dlgfooter
+  #dlgfooter,#dlgfooter8
   {
   	background-color:#f2f2f2;
   
@@ -492,7 +492,7 @@ align-items: center;
 
   
 
-#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#poidsPerdu,#conclusion 
+#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#poidsPerdu,#satisfactionOperation,#sexe,#age,#taille,#poidsPersonne,#situationFamiliale,#enfants,#conclusion 
 {
 	display: none;
 }
@@ -905,6 +905,371 @@ text-align: center;
   display: none;
 }
 
+#satisfactionOperation
+{
+  width: 100%;
+
+  
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#satisfactionOperation p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#satisfactionOperation span
+{
+  color:#e45a0c;
+}
+
+#aucuneSatisfactionOperation
+{
+  display: none;
+}
+
+#sexe
+{
+  width: 100%;
+
+  
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#sexe p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#sexe span
+{
+  color:#e45a0c;
+}
+
+#aucunSexe
+{
+  display: none;
+}
+
+#age
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#age p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#age span
+{
+  color:#e45a0c;
+}
+
+#aucunAge
+{
+  display: none;
+}
+
+#taille
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#taille p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#taille span
+{
+  color:#e45a0c;
+}
+
+#aucuneTaille
+{
+  display: none;
+}
+
+#poidsPersonne
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#poidsPersonne p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#poidsPersonne span
+{
+  color:#e45a0c;
+}
+
+#aucunPoidsPersonne
+{
+  display: none;
+}
+
+#situationFamiliale
+{
+  width: 100%;
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#situationFamiliale p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#situationFamiliale span
+{
+  color:#e45a0c;
+}
+
+#aucuneSituationFamiliale
+{
+  display: none;
+}
+
+#enfants
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#enfants p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#enfants span
+{
+  color:#e45a0c;
+}
+
+#aucunChoixEnfants1
+{
+  display: none;
+}
+
+#aucunEnfants2
+{
+  display: none;
+}
+
+#formEnfants2
+{
+  display: none;
+}
+
 
 #conclusion
 {
@@ -926,6 +1291,39 @@ text-align: center;
   padding-top: 10px;
 
   padding-bottom : 10px;
+}
+
+#conclusion2
+{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+#conclusion2 span
+{
+  color: #e45a0c;
+}
+
+#emailIncorrect2
+{
+  display: none;
 }
 
 #remerciementsConclusion
@@ -1280,7 +1678,7 @@ text-align: center;
 
 }
 
-#operation
+#operation,#enfants
 {
   width: 100%;
 
@@ -1348,10 +1746,135 @@ text-align: center;
 
 }
 
+#satisfactionOperation,#situationFamiliale
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#sexe
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#age,#taille,#poidsPersonne
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
 #conclusion
 {
   width: 100%;
   margin: auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+#conclusion2
+{
+  width: 100%;
+  margin: auto;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
