@@ -20,7 +20,23 @@ $(document).ready(function(){
 
 	var formPoidsPerduElt = document.getElementById("formPoidsPerdu") ;
 
-	var formConclusionElt = document.getElementById("formConclusion") ;
+	var formSatisfactionOperationElt = document.getElementById("formSatisfactionOperation") ;
+
+	var formSexeElt = document.getElementById("formSexe") ;
+
+	var formAgeElt = document.getElementById("formAge") ;
+
+	var formTailleElt = document.getElementById("formTaille") ;
+
+	var formPoidsPersonneElt = document.getElementById("formPoidsPersonne") ;
+
+	var formSituationFamilialeElt = document.getElementById("formSituationFamiliale") ;
+
+	var formEnfants1Elt = document.getElementById("formEnfants1") ;
+
+	var formEnfants2Elt = document.getElementById("formEnfants2") ;
+
+	
 
 	var listeAspects =[];
 
@@ -540,6 +556,20 @@ $(document).ready(function(){
                              	
 	}
 
+	function showDialogForStep8()
+	{
+		var orangebg = document.getElementById("orange-background");
+                             	   
+        var dlg8 = document.getElementById("dlgbox8");
+                             	   
+        orangebg.style.display ="block";
+                             	   
+        dlg8.style.display ="block";
+
+        
+                             	
+	}
+
 	function hideDialogAfterOneAspect()
 	{
 		$("#dlgbox,#orange-background").hide(6000 , function(){
@@ -957,11 +987,49 @@ $(document).ready(function(){
 
 												$("#poidsPerdu").hide();
 
+												document.getElementById("satisfactionOperation").style.display = "flex";
+
+												formSatisfactionOperationElt.addEventListener("submit",function(e){
 
 
-												
+													var verifySatisfactionOperation=0;
 
-												//ICI
+													var valueSatisfaction;
+
+													var satisfactionOperationRadioElts = document.getElementsByName("nameSatisfactionOperation");
+
+													for(var i=0;i<satisfactionOperationRadioElts.length;i++)
+													{
+														if(satisfactionOperationRadioElts[i].checked)
+														{
+															verifySatisfactionOperation++;
+															valueSatisfaction=satisfactionOperationRadioElts[i].value;
+															break;
+														}
+													}
+
+													if(verifySatisfactionOperation >0)
+													{
+														// ATTRIBUT 6 OBJET FINAL
+
+														finalUser.satisfactionOperationUser = valueSatisfaction;
+
+														$("#satisfactionOperation").hide();
+
+														suiteQuestionsdeSexeASituationFamiliale();
+
+													}else{
+
+														$("#aucuneSatisfactionOperation").show();
+
+
+													}
+
+
+													e.preventDefault();
+												});
+
+
 
 											}else{
 
@@ -1007,9 +1075,18 @@ $(document).ready(function(){
 
 								finalUser.dateOperationUser="";
 
-								//Sexe
+								showDialogForStep8();
 
-								conclusionAppears();
+								$("#dlgbox8,#orange-background").hide(6000 , function(){
+
+
+						        	suiteQuestionsdeSexeASituationFamiliale();
+                             	   
+        
+
+								}); 
+
+								
 							}
 
 						}else{
@@ -1052,32 +1129,9 @@ $(document).ready(function(){
 
 	}
 
-	// DON'T FORGET TO SEND EMAIL TO VERIFY IF IT EXISTS OR NOT
-	function validateEmail(email)
-	{
-		var re1 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	
 
-		var re2 = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
-    
-    	return re1.test(String(email).toLowerCase());
-
-	}
-
-	function showDialogErrorEmail()
-	{
-		document.getElementById("orange-background").style.display ="block";
-                             	   
-        document.getElementById("dlgboxErrorEmail").style.display ="block";
-
-        $("#closeErrorEmail").click(function(){
-
-        	$("#dlgboxErrorEmail,#orange-background").hide();
-
-
-        }); 
-                             	   
-       
-	}
+	
 
 	function showDialogErrorProtocoleChirurgie()
 	{
@@ -1087,7 +1141,7 @@ $(document).ready(function(){
 
         $("#closeErrorProtocoleChirurgie").click(function(){
 
-        	$("#dlgboxErrorProtocoleChirurgie,#orange-background").hide();
+        	$("#dlgboxErrorProtocoleChirurgie,#orange-background").hide(); 
 
 
         }); 
@@ -1099,47 +1153,284 @@ $(document).ready(function(){
 	{
 		document.getElementById("conclusion").style.display = "flex"; 
 
-				formConclusionElt.addEventListener("submit",function(e){
+				
+	}
 
-					var emailConclusion = formConclusionElt.elements.nameConclusion.value.trim();
+	
 
-					if( emailConclusion.length !=0 )
+	function suiteQuestionsdeSexeASituationFamiliale()
+	{
+		document.getElementById("sexe").style.display = "flex";
+
+		formSexeElt.addEventListener("submit",function(e){
+
+			var verifySexe=0;
+
+			var valueSexe;
+
+			var sexeRadioElts = document.getElementsByName("nameSexe");
+
+			for(var i=0;i<sexeRadioElts.length;i++)
+			{
+				if(sexeRadioElts[i].checked)
+				{
+					verifySexe++;
+					valueSexe=sexeRadioElts[i].value;
+					break;
+				}
+			}
+
+			if(verifySexe>0)
+			{
+
+				// ATTRIBUT 7 OBJET FINAL
+
+				finalUser.sexePersonneUser = valueSexe;
+
+				
+
+				$("#sexe").hide();
+
+				document.getElementById("age").style.display = "flex";
+
+				formAgeElt.addEventListener("submit",function(e){
+
+					var ageDonuts = formAgeElt.elements.nameAge.value.trim();
+
+					if(ageDonuts.length !=0)
 					{
+						var ageDonutsInt = parseInt(ageDonuts);
 
-						//ICI
+						// ATTRIBUT 8 OBJET FINAL
 
-						if(validateEmail(emailConclusion)===true)
-						{
-							$("#motConclusion").hide();
-
-							$("#smileConclusion").hide();
-
-							$("#formConclusion").hide();
-
-
-							$("#remerciementsConclusion").show();
-
-						}else{
-
-							//INVALID EMAIL
-
-							showDialogErrorEmail();
-
-
-						}
+						finalUser.agePersonneUser = ageDonutsInt;
 
 						
 
+						$("#age").hide();
+
+						document.getElementById("taille").style.display = "flex";
+
+						formTailleElt.addEventListener("submit",function(e){
+
+							var tailleDonuts = formTailleElt.elements.nameTaille.value.trim();
+
+							if(tailleDonuts.length !=0)
+							{
+								var tailleDonutsInt = parseInt(tailleDonuts);
+
+								// ATTRIBUT 9 OBJET FINAL
+
+								finalUser.taillePersonneUser = tailleDonutsInt;
+
+								
+
+								$("#taille").hide();
+
+								document.getElementById("poidsPersonne").style.display = "flex";
+
+								formPoidsPersonneElt.addEventListener("submit",function(e){
+
+									var poidsPersonneDonuts = formPoidsPersonneElt.elements.namePoidsPersonne.value.trim();
+
+									if(poidsPersonneDonuts.length !=0)
+									{
+										var poidsPersonneDonutsInt = parseInt(poidsPersonneDonuts);
+
+										// ATTRIBUT 10 OBJET FINAL
+
+										finalUser.poidsPersonneUser = poidsPersonneDonutsInt;
+
+
+										$("#poidsPersonne").hide();
+
+										document.getElementById("situationFamiliale").style.display = "flex";
+
+										formSituationFamilialeElt.addEventListener("submit",function(e){
+
+											var verifySituationFamiliale=0;
+
+											var valueSituationFamiliale;
+
+											var situationFamilialeRadioElts=document.getElementsByName("nameSituationFamiliale");
+
+											for(var i=0;i<situationFamilialeRadioElts.length;i++)
+											{
+												if(situationFamilialeRadioElts[i].checked)
+												{
+													verifySituationFamiliale++;
+													valueSituationFamiliale = situationFamilialeRadioElts[i].value;
+													break;
+												}
+											}
+
+											if(verifySituationFamiliale >0)
+											{
+
+												// ATTRIBUT 11 OBJET FINAL
+
+												finalUser.situationFamilialeUser = valueSituationFamiliale;
+
+												
+
+												$("#situationFamiliale").hide();
+
+												document.getElementById("enfants").style.display = "flex";
+
+												formEnfants1Elt.addEventListener("submit",function(e){
+
+													var verifyEnfants1=0;
+
+													var valueEnfants1;
+
+													var enfants1RadioElts = document.getElementsByName("nameEnfants1");
+
+													for(var i=0;i<enfants1RadioElts.length;i++)
+													{
+														if(enfants1RadioElts[i].checked)
+														{
+															verifyEnfants1++;
+															valueEnfants1 = enfants1RadioElts[i].value;
+															break;
+
+														}
+													}
+
+													if(verifyEnfants1>0)
+													{
+														
+
+														finalUser.isEnfantsUser = valueEnfants1; // ATTRIBUT 12 OBJET FINAL
+
+														console.log("IS E : "+finalUser.isEnfantsUser);
+
+														if(finalUser.isEnfantsUser==="Oui")
+														{
+
+															document.getElementById("formEnfants1").style.display = "none";
+
+															document.getElementById("formEnfants2").style.display = "block";
+
+															formEnfants2Elt.addEventListener("submit",function(e){
+
+																var nbreEnfantsDonuts = formEnfants2Elt.elements.nameEnfants2.value.trim();
+
+																var nbreEnfantsDonutsInt = parseInt(nbreEnfantsDonuts);
+
+																if(nbreEnfantsDonutsInt>=1)
+																{
+
+																	finalUser.nbreEnfantsUser=nbreEnfantsDonutsInt; // ATTRIBUT 13 OBJET FINAL
+
+																	console.log("NBRE >= 1 : "+finalUser.nbreEnfantsUser);
+
+																	$("#enfants").hide();
+
+																	conclusionAppears();
+
+																	
+
+
+																}else{
+
+																	$("#aucunEnfants2").show();
+
+
+																}
+
+
+
+																e.preventDefault();
+															});
+
+
+														}else{
+
+														//finalUser.isEnfantsUser==="Non"
+
+														finalUser.nbreEnfantsUser=0; // ATTRIBUT 13 OBJET FINAL
+
+														console.log("NBRE null : "+finalUser.nbreEnfantsUser);
+
+														$("#enfants").hide();
+
+														//Suite conclusion
+
+														conclusionAppears();
+
+
+
+
+
+
+														}
+
+													}else{
+
+														$("#aucunChoixEnfants1").show();
+
+
+													}
+
+													e.preventDefault();
+												});
+
+
+											}else{
+
+												$("#aucuneSituationFamiliale").show();
+
+
+											}
+
+											e.preventDefault();
+										});
+
+
+
+									}else{
+
+										$("#aucunPoidsPersonne").show();
+
+
+									}
+
+									e.preventDefault();
+								});
+
+							}else{
+
+								$("#aucuneTaille").show();
+
+
+							}
+
+
+							e.preventDefault();
+						});
+
 					}else{
 
-						formConclusionElt.elements.nameConclusion.value = "";
+						$("#aucunAge").show();
 
-						document.getElementById("nameConclusion").focus();
 
 					}
 
+
 					e.preventDefault();
 				});
+
+			}else{
+
+				$("#aucunSexe").show();
+
+
+			}
+
+			e.preventDefault();
+		});
+
+
 	}
 
 	function footerDate()
