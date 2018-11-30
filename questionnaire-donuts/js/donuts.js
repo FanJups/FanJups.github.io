@@ -54,9 +54,9 @@ $(document).ready(function(){
 
 	var timing = 40;
 
-	var listeAspectUser =[]; // liste des aspects + importance + valence
+	var listeAspectUser =[]; // liste des aspects + importance + valence 
 
-	//Working on surgery date
+	//Working on surgery date 
 
 	$(function(){
 
@@ -578,11 +578,6 @@ $(document).ready(function(){
 
 		    document.getElementById("valence").style.display = "flex";
 
-		    document.getElementById("orange-background").style.display="none";
-                             	   
-        	document.getElementById("dlgbox").style.display="none";
-                             	   
-        
 
 		}); 
 
