@@ -6,7 +6,7 @@
 
 require 'Aspect.php';
 
-public class FormUser
+class FormUser
 {
 
 	private static $_compteurFormUser = 0;
@@ -31,12 +31,28 @@ public class FormUser
 
 
 	private $_sexePersonneUser;
+	const SEXE_FEMME ="Femme";
+	const SEXE_HOMME ="Homme";
+
 	private $_agePersonneUser;
 	private $_taillePersonneUser;
 	private $_poidsPersonneUser;
+
 	private $_situationFamilialeUser;
+	const SF_1 ="Célibataire";
+	const SF_2 ="En couple";
+	const SF_3 ="En concubinage";
+	const SF_4 ="Mariée";
+	const SF_5 ="Divorcée";
+	
 	private $_isEnfantsUser ;
-	private $_nbreEnfantsUser ;
+	const ISEFTS_OUI ="Oui";
+	const ISEFTS_NON ="Non";
+
+
+	private $_nbreEnfantsUser ; 
+
+	private $_date;
 
 
 	public function __construct()
@@ -44,6 +60,19 @@ public class FormUser
 
 		self::$_compteurFormUser++;
 
+	}
+
+	//arrayOfAspect
+
+	public function addAspectInArray(Aspect $aspect)
+	{
+		
+		$this->_arrayOfAspect[] = $aspect;
+	}
+
+	public function getArrayOfAspect()
+	{
+		return $this->arrayOfAspect ;
 	}
 
 	//souhait
@@ -104,16 +133,16 @@ public class FormUser
 
 			
 
-		}else{ //Opération effectuée
+		}else{ //Opération effectuée  d/m/y
 
 
 			$dmy=[];
 
 			$dmy = getArrayWithoutSlashes($dateOperationUser);
 
-			$d= (int) $dmy[0];
-			$m= (int) $dmy[1];
-			$y= (int) $dmy[2];
+			$d= (int) $dmy[0];  // date
+			$m= (int) $dmy[1]; // month
+			$y= (int) $dmy[2]; // year
 
 			$date = new DateTime();
 			$date->setDate($y, $m, $d);
@@ -172,6 +201,187 @@ public class FormUser
 		return $tab;
 
 	}
+
+	// poids perdu
+
+	public function getPoidsPerduUser()
+	{
+		return $this->poidsPerduUser ;
+	}
+
+	public function setPoidsPerduUser($poidsPerduUser)
+	{
+		$poidsPerduUser = (int) $poidsPerduUser;
+
+		
+		$this->_poidsPerduUser = $poidsPerduUser;
+
+	}
+
+	// satisfaction opération
+
+	public function getSatisfactionOperationUser()
+	{
+		return $this->satisfactionOperationUser;
+	}
+
+	public function setSatisfactionOperationUser($satisfactionOperationUser)
+	{
+		
+
+		if(is_string($satisfactionOperationUser) && !empty($satisfactionOperationUser))
+		{
+			$this->_satisfactionOperationUser = $satisfactionOperationUser;
+
+		}else{
+
+			//Error
+
+		}
+
+	}
+
+	//sexe
+
+	public function setSexePersonneUser($sexePersonneUser)
+	{
+		if(in_array($sexePersonneUser, array(self::SEXE_HOMME,self::SEXE_FEMME)))
+		{
+			$this->_sexePersonneUser = $sexePersonneUser;
+
+		}else{
+
+			//Error
+
+
+		}
+
+	}
+
+	public function getSexePersonneUser()
+	{
+		return $this->sexePersonneUser ;
+	}
+
+	// age
+
+	public function getAgePersonneUser()
+	{
+		return $this->agePersonneUser ;
+	}
+
+	public function setAgePersonneUser($agePersonneUser)
+	{
+		$agePersonneUser = (int) $agePersonneUser;
+
+		
+		$this->_agePersonneUser = $agePersonneUser;
+
+	}
+
+	// taille
+
+	public function getTaillePersonneUser()
+	{
+		return $this->taillePersonneUser ;
+	}
+
+	public function setTaillePersonneUser($taillePersonneUser)
+	{
+		$taillePersonneUser = (int) $taillePersonneUser;
+
+		
+		$this->_taillePersonneUser = $taillePersonneUser;
+
+	}
+
+	// poids
+
+	public function getPoidsPersonneUser()
+	{
+		return $this->poidsPersonneUser ;
+	}
+
+	public function setPoidsPersonneUser($poidsPersonneUser)
+	{
+		$poidsPersonneUser = (int) $poidsPersonneUser;
+
+		
+		$this->_poidsPersonneUser = $poidsPersonneUser;
+
+	}
+
+	// Situation familiale
+
+
+
+	public function setSituationFamilialeUser($situationFamilialeUser)
+	{
+		if(in_array($situationFamilialeUser, array(self::SF_1,self::SF_2,self::SF_3,self::SF_4,self::SF_5)))
+		{
+			$this->_situationFamilialeUser = $situationFamilialeUser;
+
+		}else{
+
+			//Error
+
+
+		}
+
+	}
+
+	public function getSituationFamilialeUser()
+	{
+		return $this->situationFamilialeUser ;
+	}
+
+	//isEnfantsUser
+
+	public function setIsEnfantsUser($isEnfantsUser)
+	{
+		if(in_array($isEnfantsUser, array(self::ISEFTS_OUI,self::ISEFTS_NON)))
+		{
+			$this->_isEnfantsUser = $isEnfantsUser;
+
+		}else{
+
+			//Error
+
+
+		}
+
+	}
+
+	public function getIsEnfantsUser()
+	{
+		return $this->isEnfantsUser ;
+	}
+
+	// nbre enfants
+
+	public function getNbreEnfantsUser()
+	{
+		return $this->nbreEnfantsUser ;
+	}
+
+	public function setNbreEnfantsUser($nbreEnfantsUser)
+	{
+		$nbreEnfantsUser = (int) $nbreEnfantsUser;
+
+		
+		$this->_nbreEnfantsUser = $nbreEnfantsUser;
+
+	}
+
+	public function setDate(\DateTime $date)
+	{
+	    $this->_date = $date;
+	}
+
+	public function getDate()
+    {
+    	return $this->date;
+    }
 
 	public static function getCompteurFormUser()
 	{
