@@ -2,10 +2,6 @@
 
 $(document).ready(function(){
 
-
-
-	
-
 	var formAspectsElt; 
 
 	var formAspectsImportanceElt = document.getElementById("formAspects&Importance") ; 
@@ -161,10 +157,6 @@ $(document).ready(function(){
 
 	var finalUser = new QuestionnaireUser("","","","","","","","","","","","","");
 
-
-
-	
-
 	function countDown40()
 	{
 		remplissageFormulaire1(); 
@@ -217,9 +209,8 @@ $(document).ready(function(){
 
 				document.getElementById("chrono").textContent = "40 secondes restantes";
 
-				setTimeout(countDown40,1000); // 1second -> the chrono shows 40 first
-
-				
+				setTimeout(countDown40,1000); // 1 second -> the chrono shows 40 first
+	
 
 			}else{ //The user entered something
 
@@ -239,10 +230,7 @@ $(document).ready(function(){
 
 		        		listeAspectUser.push(eltAspectUser); 
 
-		        		listeAspectUser.forEach(function (aUser) {
-        
-        									console.log(aUser.description());
-    									});
+		        		
 
 		        		hideDialogAfterOneAspect();
 
@@ -269,7 +257,7 @@ $(document).ready(function(){
 
 		        	if(listeAspects.length > 1)
 		        	{
-		        		console.log(listeAspects.length+" résultats");
+		        	
 
 		        		showImportance = true;
 
@@ -413,9 +401,6 @@ $(document).ready(function(){
 									{
 										//Formulaire correct, on passe à l'étape 3
 
-										console.log("Etape 3 correct");
-
-										
 
 										for(var p=0;p<listeAspects.length;p++)
 										{
@@ -424,10 +409,7 @@ $(document).ready(function(){
 											listeAspectUser.push(eltAspectUser);
 										}
 
-										listeAspectUser.forEach(function (aUser) {
-        
-        									console.log(aUser.description());
-    									});
+										
 
 										$("#importance").hide(); 
 
@@ -826,7 +808,7 @@ $(document).ready(function(){
 					}
 				}
 
-				console.log("valence "+(i+1)+" : "+valence_value);
+				
 			}
 
 			if(compteur===liste.length)
@@ -853,24 +835,11 @@ $(document).ready(function(){
 					}
 				}
 
-				console.log("OK");
-
-				liste.forEach(function (aUser) {
-        
-        									console.log(aUser.description());
-    									});
-
-				
 
 				$("#valence").hide();
 
 				finalUser.listeAspectImportanceValenceUser = liste; // ATTRIBUT 1 OBJET FINAL
 
-				//Q4 à 12
-
-				//Q4
-
-				
 
 				document.getElementById("protocoleChirurgieObesite").style.display = "flex";
 
@@ -905,7 +874,7 @@ $(document).ready(function(){
 
 						
 
-						console.log("envisager: "+finalUser.souhaitUser);
+						
 
 						$("#protocoleChirurgieObesite").hide();
 
@@ -1068,7 +1037,11 @@ $(document).ready(function(){
 
 								document.getElementById("operation").style.display = "none";
 
-								finalUser.dateOperationUser="";
+								finalUser.dateOperationUser=""; // ATTRIBUT 4 OBJET FINAL
+								
+								finalUser.poidsPerduUser = 0;   // ATTRIBUT 5 OBJET FINAL
+								
+								finalUser.satisfactionOperationUser = "Aucune satisfaction"; // ATTRIBUT 6 OBJET FINAL
 
 								showDialogForStep8();
 
@@ -1297,7 +1270,7 @@ $(document).ready(function(){
 
 														finalUser.isEnfantsUser = valueEnfants1; // ATTRIBUT 12 OBJET FINAL
 
-														console.log("IS E : "+finalUser.isEnfantsUser);
+														
 
 														if(finalUser.isEnfantsUser==="Oui")
 														{
@@ -1317,14 +1290,11 @@ $(document).ready(function(){
 
 																	finalUser.nbreEnfantsUser=nbreEnfantsDonutsInt; // ATTRIBUT 13 OBJET FINAL
 
-																	console.log("NBRE >= 1 : "+finalUser.nbreEnfantsUser);
+																	finalUser.description();
 
 																	$("#enfants").hide();
 
 																	conclusionAppears();
-
-																	
-
 
 																}else{
 
@@ -1345,18 +1315,14 @@ $(document).ready(function(){
 
 														finalUser.nbreEnfantsUser=0; // ATTRIBUT 13 OBJET FINAL
 
-														console.log("NBRE null : "+finalUser.nbreEnfantsUser);
+														finalUser.description();
+
 
 														$("#enfants").hide();
 
 														//Suite conclusion
 
 														conclusionAppears();
-
-
-
-
-
 
 														}
 
