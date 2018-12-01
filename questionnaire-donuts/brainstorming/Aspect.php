@@ -1,6 +1,6 @@
 <?php
 
-public class Aspect
+class Aspect
 {
 	private $_name; //string
 	private $_importance; //int
