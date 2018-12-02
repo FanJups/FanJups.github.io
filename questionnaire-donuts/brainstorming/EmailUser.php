@@ -3,8 +3,8 @@
 class EmailUser
 {
 	private static $_compteurEmailUser = 0;
-	private $_date;
-	private $email;
+	protected $date;
+	protected $email;
 
 	public function __construct()
 	{
@@ -25,7 +25,7 @@ class EmailUser
 
 	    if(preg_match($pattern1, $email))
 	    {
-	    	$this->_email = $email;
+	    	$this->email = $email;
 
 	    }else{
 
@@ -42,7 +42,7 @@ class EmailUser
 
 	public function setDate(\DateTime $date)
 	{
-	    $this->_date = $date;
+	    $this->date = $date;
 	}
 
 	public function getDate()
@@ -50,7 +50,7 @@ class EmailUser
     	return $this->date;
     }
 
-	public static function getCompteurEmailUser()
+	public static function getCompteurEmailUser() 
 	{
 		return self::$_compteurEmailUser;
 	}
