@@ -11,48 +11,48 @@ class FormUser
 
 	private static $_compteurFormUser = 0;
 
-	private $_arrayOfAspect=[];
+	protected $arrayOfAspect=[];
 
-	private $_souhaitUser; //string
+	protected $souhaitUser; //string
 	const SOUHAITUSER_OUI_1 ="Oui (J'ai entrepris des démarches)";
 	const SOUHAITUSER_OUI_2 ="Oui (Je n'ai pas entrepris de démarche)";
 	const SOUHAITUSER_NON ="Non";
 
 	//Surgery
 
-	private $_isOperationUser;//string
+	protected $isOperationUser;//string
 	const ISOPERATION_OUI ="Oui";
 	const ISOPERATION_NON ="Non";
 	
 
-	private $_dateOperationUser; //date
-	private $_poidsPerduUser ;
-	private $_satisfactionOperationUser;
+	protected $dateOperationUser; //date
+	protected $poidsPerduUser ;
+	protected $satisfactionOperationUser;
 
 
-	private $_sexePersonneUser;
+	protected $sexePersonneUser;
 	const SEXE_FEMME ="Femme";
 	const SEXE_HOMME ="Homme";
 
-	private $_agePersonneUser;
-	private $_taillePersonneUser;
-	private $_poidsPersonneUser;
+	protected $agePersonneUser;
+	protected $taillePersonneUser;
+	protected $poidsPersonneUser;
 
-	private $_situationFamilialeUser;
+	protected $situationFamilialeUser;
 	const SF_1 ="Célibataire";
 	const SF_2 ="En couple";
 	const SF_3 ="En concubinage";
 	const SF_4 ="Mariée";
 	const SF_5 ="Divorcée";
 	
-	private $_isEnfantsUser ;
+	protected $isEnfantsUser ;
 	const ISEFTS_OUI ="Oui";
 	const ISEFTS_NON ="Non";
 
 
-	private $_nbreEnfantsUser ; 
+	protected $nbreEnfantsUser ; 
 
-	private $_date;
+	protected $date;
 
 
 	public function __construct()
@@ -67,7 +67,7 @@ class FormUser
 	public function addAspectInArray(Aspect $aspect)
 	{
 		
-		$this->_arrayOfAspect[] = $aspect;
+		$this->arrayOfAspect[] = $aspect;
 	}
 
 	public function getArrayOfAspect()
@@ -81,7 +81,7 @@ class FormUser
 	{
 		if(in_array($souhaitUser, array(self::SOUHAITUSER_OUI_1,self::SOUHAITUSER_OUI_2,self::SOUHAITUSER_NON)))
 		{
-			$this->_souhaitUser = $souhaitUser;
+			$this->souhaitUser = $souhaitUser;
 
 		}else{
 
@@ -103,7 +103,7 @@ class FormUser
 	{
 		if(in_array($isOperationUser, array(self::ISOPERATION_OUI,self::ISOPERATION_NON)))
 		{
-			$this->_isOperationUser = $isOperationUser;
+			$this->isOperationUser = $isOperationUser;
 
 		}else{
 
@@ -144,15 +144,15 @@ class FormUser
 			$m= (int) $dmy[1]; // month
 			$y= (int) $dmy[2]; // year
 
-			$date = new DateTime();
-			$date->setDate($y, $m, $d);
-			$date->format('Y-m-d');
+			$dateFormUser = new DateTime();
+			$dateFormUser->setDate($y, $m, $d);
+			$dateFormUser->format('Y-m-d');
 
-			$dateOperationUser = $date;
+			$dateOperationUser = $dateFormUser;
 
 		}
 
-		$this->_dateOperationUser = $dateOperationUser;
+		$this->dateOperationUser = $dateOperationUser;
 
 	}
 
@@ -214,7 +214,7 @@ class FormUser
 		$poidsPerduUser = (int) $poidsPerduUser;
 
 		
-		$this->_poidsPerduUser = $poidsPerduUser;
+		$this->poidsPerduUser = $poidsPerduUser;
 
 	}
 
@@ -231,7 +231,7 @@ class FormUser
 
 		if(is_string($satisfactionOperationUser) && !empty($satisfactionOperationUser))
 		{
-			$this->_satisfactionOperationUser = $satisfactionOperationUser;
+			$this->satisfactionOperationUser = $satisfactionOperationUser;
 
 		}else{
 
@@ -247,7 +247,7 @@ class FormUser
 	{
 		if(in_array($sexePersonneUser, array(self::SEXE_HOMME,self::SEXE_FEMME)))
 		{
-			$this->_sexePersonneUser = $sexePersonneUser;
+			$this->sexePersonneUser = $sexePersonneUser;
 
 		}else{
 
@@ -275,7 +275,7 @@ class FormUser
 		$agePersonneUser = (int) $agePersonneUser;
 
 		
-		$this->_agePersonneUser = $agePersonneUser;
+		$this->agePersonneUser = $agePersonneUser;
 
 	}
 
@@ -291,7 +291,7 @@ class FormUser
 		$taillePersonneUser = (int) $taillePersonneUser;
 
 		
-		$this->_taillePersonneUser = $taillePersonneUser;
+		$this->taillePersonneUser = $taillePersonneUser;
 
 	}
 
@@ -307,7 +307,7 @@ class FormUser
 		$poidsPersonneUser = (int) $poidsPersonneUser;
 
 		
-		$this->_poidsPersonneUser = $poidsPersonneUser;
+		$this->poidsPersonneUser = $poidsPersonneUser;
 
 	}
 
@@ -319,7 +319,7 @@ class FormUser
 	{
 		if(in_array($situationFamilialeUser, array(self::SF_1,self::SF_2,self::SF_3,self::SF_4,self::SF_5)))
 		{
-			$this->_situationFamilialeUser = $situationFamilialeUser;
+			$this->situationFamilialeUser = $situationFamilialeUser;
 
 		}else{
 
@@ -341,7 +341,7 @@ class FormUser
 	{
 		if(in_array($isEnfantsUser, array(self::ISEFTS_OUI,self::ISEFTS_NON)))
 		{
-			$this->_isEnfantsUser = $isEnfantsUser;
+			$this->isEnfantsUser = $isEnfantsUser;
 
 		}else{
 
@@ -369,13 +369,13 @@ class FormUser
 		$nbreEnfantsUser = (int) $nbreEnfantsUser;
 
 		
-		$this->_nbreEnfantsUser = $nbreEnfantsUser;
+		$this->nbreEnfantsUser = $nbreEnfantsUser;
 
 	}
 
 	public function setDate(\DateTime $date)
 	{
-	    $this->_date = $date;
+	    $this->date = $date;
 	}
 
 	public function getDate()
