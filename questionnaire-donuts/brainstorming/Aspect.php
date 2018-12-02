@@ -2,9 +2,9 @@
 
 class Aspect
 {
-	private $_name; //string
-	private $_importance; //int
-	private $_valence;//string
+	protected $name; //string
+	protected $importance; //int
+	protected $valence;//string
 
 	private static $_compteurAspect = 0;
 
@@ -29,7 +29,7 @@ class Aspect
 	{
 		if(is_string($name) && !empty($name))
 		{
-			$this->_name = $name;
+			$this->name = $name;
 
 		}else{
 
@@ -54,7 +54,7 @@ class Aspect
 		if($importance  >=1)
 		{
 
-			$this->_importance = $importance;
+			$this->importance = $importance;
 
 		}else{
 
@@ -76,7 +76,7 @@ class Aspect
 
 		if(in_array($valence, array(self::VALENCE_3_NEGATIVE,self::VALENCE_2_NEGATIVE,self::VALENCE_1_NEGATIVE,self::VALENCE_3_POSITIVE,self::VALENCE_2_POSITIVE,self::VALENCE_1_POSITIVE) ))
 		{
-			$this->_valence = $valence;
+			$this->valence = $valence; 
 
 		}else{
 
@@ -85,7 +85,7 @@ class Aspect
 		}
 	}
 
-	public function getValence()
+	public function getValence() 
 	{
 		return $this->valence ;
 	}
