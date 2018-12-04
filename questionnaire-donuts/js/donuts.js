@@ -129,6 +129,7 @@ $(document).ready(function(){
 		this.situationFamilialeUser= situationFamiliale;
 		this.isEnfantsUser = isEnfants;
 		this.nbreEnfantsUser = nbreEnfants;
+		this.uniqueIdUser ="";
 
 		this.description=function(){
 
@@ -147,6 +148,8 @@ $(document).ready(function(){
     		console.log("taille -> "+this.taillePersonneUser+" poids -> "+this.poidsPersonneUser+" situationFamiliale -> "+this.situationFamilialeUser);
 
     		console.log("isEnfants -> "+this.isEnfantsUser+" nbreEnfants -> "+this.nbreEnfantsUser);
+
+    		console.log("uniqueIdUser -> "+this.uniqueIdUser);
 
 		};
 
@@ -1022,7 +1025,7 @@ $(document).ready(function(){
 
 
 
-									e.preventDefault();
+									e.preventDefault(); 
 								});
 
 								//finalUser.dateOperationUser=;
@@ -1290,6 +1293,8 @@ $(document).ready(function(){
 
 																	finalUser.nbreEnfantsUser=nbreEnfantsDonutsInt; // ATTRIBUT 13 OBJET FINAL
 
+																	finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
+
 																	finalUser.description();
 
 																	$("#enfants").hide();
@@ -1314,6 +1319,8 @@ $(document).ready(function(){
 														//finalUser.isEnfantsUser==="Non"
 
 														finalUser.nbreEnfantsUser=0; // ATTRIBUT 13 OBJET FINAL
+
+														finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
 
 														finalUser.description();
 
@@ -1401,6 +1408,35 @@ $(document).ready(function(){
 		var fullyear = date.getFullYear();
 
 		document.getElementById("copyrightDonuts").textContent = "donuts-asso © "+fullyear;
+	}
+
+	// Générer un id unique pour lier la liste des aspects et les autres questions en base de données
+
+	function uniqueId1()
+	{
+		return 'uniqueId-' + Math.random().toString(36).substr(2, 16);
+	}
+
+	function uniqueId2()
+	{
+		var text = "";
+  		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  		for (var i = 0; i < 5; i++)
+  		{
+    		text += possible.charAt(Math.floor(Math.random() * possible.length));
+  		}
+
+  		return text;
+	}
+
+	function uniqueIdSum()
+	{
+		var donuts1 =uniqueId1() ;
+		var donuts2 =uniqueId2() ;
+		var donutsSum = donuts1 + donuts2;
+
+		return donutsSum;
 	}
 
 	/**  functions End **/
