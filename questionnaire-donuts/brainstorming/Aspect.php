@@ -8,6 +8,8 @@ class Aspect
 
 	protected $uniqueId;
 
+	protected $date;
+
 	private static $_compteurAspect = 0;
 
 	const VALENCE_3_NEGATIVE ="---";
@@ -24,6 +26,18 @@ class Aspect
 		self::$_compteurAspect++;
 
 	}
+
+	// date
+
+	public function setDate(\DateTime $date)
+	{
+	    $this->date = $date;
+	}
+
+	public function getDate()
+    {
+    	return $this->date;
+    }
 
 	//uniqueId  
 
