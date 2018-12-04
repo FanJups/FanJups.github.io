@@ -6,6 +6,8 @@ class Aspect
 	protected $importance; //int
 	protected $valence;//string
 
+	protected $uniqueId;
+
 	private static $_compteurAspect = 0;
 
 	const VALENCE_3_NEGATIVE ="---";
@@ -21,6 +23,20 @@ class Aspect
 
 		self::$_compteurAspect++;
 
+	}
+
+	//uniqueId  
+
+	public function setUniqueId($uniqueId)
+	{
+		
+		$this->uniqueId = $uniqueId;
+
+	}
+
+	public function getUniqueId()
+	{
+		return $this->uniqueId ;
 	}
 
 	//name
