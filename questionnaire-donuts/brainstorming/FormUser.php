@@ -9,6 +9,10 @@ require 'Aspect.php';
 class FormUser
 {
 
+	protected $localisation; // Pour plus tard
+
+	protected $uniqueId;
+
 	private static $_compteurFormUser = 0;
 
 	protected $arrayOfAspect=[];
@@ -61,6 +65,22 @@ class FormUser
 		self::$_compteurFormUser++;
 
 	}
+
+	//uniqueId  
+
+	public function setUniqueId($uniqueId)
+	{
+		
+		$this->uniqueId = $uniqueId;
+
+	}
+
+	public function getUniqueId()
+	{
+		return $this->uniqueId ;
+	}
+
+
 
 	//arrayOfAspect
 
