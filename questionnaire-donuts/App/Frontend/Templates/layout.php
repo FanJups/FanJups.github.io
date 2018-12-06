@@ -8,7 +8,7 @@ date : samedi 03 novembre 2018
 
 -->
 
-<!DOCTYPE html>    
+<!DOCTYPE html>     
 
 <html lang="fr">
 
@@ -18,7 +18,7 @@ date : samedi 03 novembre 2018
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<meta name="description" content="Questionnaire permettant de déterminer l'influence de ton poids">
 
@@ -436,7 +436,10 @@ align-items: center;
 
     <?php
 
-    }else{
+    }
+
+    if(isset($donutsEmail)) 
+    {
 
     ?>
 
