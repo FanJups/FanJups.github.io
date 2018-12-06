@@ -284,8 +284,9 @@ date : samedi 03 novembre 2018
 
 					<p> <strong>D</strong>éveloppement </p>
 					<p> <strong>O</strong>utils </p>
-					<p> <strong>NU</strong>mériques </p>
-					<p> <strong>T</strong>raitements </p>
+					<p> <strong>N</strong>umériques </p> 
+					<p> <strong>U</strong>tiles </p>
+					<p> <strong>T</strong>ravail </p>
 					<p> <strong>S</strong>urpoids </p>
 
 				</div>
