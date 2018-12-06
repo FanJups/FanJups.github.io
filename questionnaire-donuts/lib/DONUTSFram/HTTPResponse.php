@@ -1,7 +1,7 @@
 <?php
 namespace DONUTSFram;
 
-class HTTPResponse extends ApplicationComponent 
+class HTTPResponse extends ApplicationComponent  
 {
   protected $page;
 
@@ -12,14 +12,17 @@ class HTTPResponse extends ApplicationComponent
 
   public function redirect($location)
   {
-    header('Location: '.$location);
+    header('Location: '.$location); 
     exit;
   }
 
-  public function redirect404()
+  public function redirect404() 
   {
     $this->page = new Page($this->app);
-    $this->page->setContentFile(__DIR__.'/../../Errors/404.html'); 
+    $this->page->setContentFile(__DIR__.'/../../Errors/404.php'); 
+
+    // On ajoute une définition pour le titre.
+    $this->page->addVar('title', 'Page introuvable | Mon poids et Moi');
     
     $this->addHeader('HTTP/1.0 404 Not Found');
     
