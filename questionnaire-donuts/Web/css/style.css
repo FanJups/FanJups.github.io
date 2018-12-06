@@ -8,7 +8,7 @@ date : samedi 03 novembre 2018
 
 */
 
-@font-face
+@font-face 
 {
     font-family: 'roboto_light_macroman';
     src: url('../fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.eot');
@@ -564,6 +564,51 @@ align-items: center;
   color: #e45a0c;
 
   
+}
+
+#errorpagenotfound
+{
+  width: 100%;
+
+  display: flex;
+
+
+  margin: auto;
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset ;
+
+  border-radius: 20px ;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#errorpagenotfound span
+{
+  color:#e45a0c;
+}
+
+#errorpagenotfound p
+{
+  
+
+  text-align: justify;
 }
 
 #aspects
@@ -1548,6 +1593,42 @@ align-items: center;
 
   
   text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#errorpagenotfound
+{
+  width: 100%;
+
+  display: flex;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
 
   padding-top: 10px;
 
