@@ -1,0 +1,2008 @@
+/* 
+
+
+author : Fanon JUPKWO
+email : jupsfan@gmail.com
+date : samedi 03 novembre 2018
+
+
+*/
+
+@font-face 
+{
+    font-family: 'roboto_light_macroman';
+    src: url('../fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.eot');
+    src: url('../fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.woff') format('woff'),
+         url('../fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.svg#roboto_light_macroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'roboto_regular_macroman';
+    src: url('../fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.eot');
+    src: url('../fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.woff') format('woff'),
+         url('../fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.svg#roboto_regular_macroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+    
+    
+    display: flex;
+
+	flex-direction: column;
+
+	justify-content: center;
+
+	
+align-items: center;
+
+
+    font-family: roboto_regular_macroman;
+
+    padding-bottom: 0px;
+
+    border: 10px solid transparent;
+
+    border-image: url("../resources/donutsFooter.png") 30 round;
+  
+
+}
+
+#wrap
+{
+	display: flex;
+
+	flex-direction: column;
+
+	justify-content: space-around;
+
+	align-items:center;
+
+	margin: auto;
+
+	width: 100%;
+
+	
+
+
+}
+
+#nojavascript
+{
+  display: none;
+  width: 100%;
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset; 
+
+  border-radius: 20px;
+
+  
+
+  font-size: 1.5em;
+
+  
+  text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+
+#orange-background
+{
+  
+    display:none;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-color:#fefefe;
+    opacity:0.5;
+    z-index:9999;
+  
+  }
+
+  #dlgbox,#dlgbox8
+  {
+
+  	display:none;
+  
+   
+    
+    z-index:999999;
+    border-radius:10px;
+    
+    
+  
+    border: 10px #e59b10 groove; 
+
+    padding:5px;
+
+        /*Centered*/
+
+
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  }
+
+  #dlgheader,#dlgheader8
+  {
+  	background-color:#e59b10;
+  color:white;
+  font-size:20px;
+  padding:10px;
+  margin: 10px 10px 0px 10px;
+  text-align: center;
+  }
+
+  #dlgbody,#dlgbody8
+  {
+  	background-color:white;
+  
+  color:black;
+  
+  font-size:14px;
+  
+  padding:10px;
+  
+  margin:0px 10px 0px 10px;
+  display: none;
+  }
+
+  #dlgfooter,#dlgfooter8
+  {
+  	background-color:#f2f2f2;
+  
+  text-align:right;
+  padding:10px;
+  margin:0px 10px 10px 10px;
+  display: none;
+  }
+
+  
+
+  #dlgboxErrorDuplicateValues
+  {
+
+    display:none ;
+  
+   
+    
+    z-index:999999999999999 !important;
+    border-radius:10px !important;
+    
+    
+  
+    border: 10px #e59b10 groove !important;
+
+    padding:5px !important;
+
+    /*Centered*/
+
+
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  }
+
+  #dlgheaderErrorDuplicateValues
+  {
+    background-color:#e59b10 !important;
+  color:white !important;
+  font-size:20px !important;
+  padding:10px !important;
+  margin: 10px 10px 0px 10px !important;
+  text-align: center !important;
+  }
+
+  #dlgbodyErrorDuplicateValues
+  {
+    background-color:white !important;
+  
+  color:black !important;
+  
+  font-size:14px !important;
+  
+  padding:10px !important;
+  
+  margin:0px 10px 0px 10px !important;
+  
+  }
+
+  #dlgfooterErrorDuplicateValues
+  {
+    background-color:#f2f2f2 !important;
+  
+  text-align:center !important;
+  padding:10px !important;
+  margin:0px 10px 10px 10px !important;
+  
+  }
+
+  #dlgboxErrorMinMax
+  {
+
+    display:none ;
+  
+   
+    
+    z-index:999999999999 !important;
+    border-radius:10px !important;
+    
+    
+  
+    border: 10px #e59b10 groove !important;
+
+    padding:5px !important;
+
+     /*Centered*/
+
+
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  }
+
+  #dlgheaderErrorMinMax
+  {
+    background-color:#e59b10 !important;
+  color:white !important;
+  font-size:20px !important;
+  padding:10px !important;
+  margin: 10px 10px 0px 10px !important;
+  text-align: center !important;
+  }
+
+  #dlgbodyErrorMinMax
+  {
+    background-color:white !important;
+  
+  color:black !important;
+  
+  font-size:14px !important;
+  
+  padding:10px !important;
+  
+  margin:0px 10px 0px 10px !important;
+  
+  }
+
+  #dlgfooterErrorMinMax
+  {
+    background-color:#f2f2f2 !important;
+  
+  text-align:center !important;
+  padding:10px !important;
+  margin:0px 10px 10px 10px !important;
+  
+  }
+
+  #dlgboxErrorValence
+  {
+
+    display:none ;
+
+   
+   
+    
+    z-index:99999999999 ;
+    border-radius:10px ;
+    
+    
+  
+    border: 10px #e59b10 groove ;
+
+    padding:5px ;
+
+    /*Centered*/
+
+
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  }
+
+  #dlgheaderErrorValence
+  {
+    background-color:#e59b10 !important;
+  color:white !important;
+  font-size:20px !important;
+  padding:10px !important;
+  margin: 10px 10px 0px 10px !important;
+  text-align: center !important;
+  }
+
+  #dlgbodyErrorValence
+  {
+    background-color:white !important;
+  
+  color:black !important;
+  
+  font-size:14px !important;
+  
+  padding:10px !important;
+  
+  margin:0px 10px 0px 10px !important;
+  
+  }
+
+  #dlgfooterErrorValence
+  {
+    background-color:#f2f2f2 !important;
+  
+  text-align:center !important;
+  padding:10px !important;
+  margin:0px 10px 10px 10px !important;
+  
+  }
+
+  #dlgboxErrorEmail 
+  {
+
+    display:none ;
+  
+   
+    
+    z-index:99999999999 !important;
+    border-radius:10px !important;
+    
+    
+  
+    border: 10px #e59b10 groove !important;
+
+    padding:5px !important;
+
+     /*Centered*/
+
+
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  }
+
+  #dlgheaderErrorEmail
+  {
+    background-color:#e59b10 !important;
+  color:white !important;
+  font-size:20px !important;
+  padding:10px !important;
+  margin: 10px 10px 0px 10px !important;
+  text-align: center !important;
+  }
+
+  #dlgbodyErrorEmail
+  {
+    background-color:white !important;
+  
+  color:black !important;
+  
+  font-size:14px !important;
+  
+  padding:10px !important;
+  
+  margin:0px 10px 0px 10px !important;
+  
+  }
+
+  #dlgfooterErrorEmail
+  {
+    background-color:#f2f2f2 !important;
+  
+  text-align:center !important;
+  padding:10px !important;
+  margin:0px 10px 10px 10px !important;
+  
+  }
+
+  
+
+    #dlgboxErrorProtocoleChirurgie 
+  {
+
+    display:none ;
+  
+   
+    
+    z-index:99999999999 !important;
+    border-radius:10px !important;
+    
+    
+  
+    border: 10px #e59b10 groove !important;
+
+    padding:5px !important;
+
+     /*Centered*/
+
+
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  }
+
+  #dlgheaderErrorProtocoleChirurgie
+  {
+    background-color:#e59b10 !important;
+  color:white !important;
+  font-size:20px !important;
+  padding:10px !important;
+  margin: 10px 10px 0px 10px !important;
+  text-align: center !important;
+  }
+
+  #dlgbodyErrorProtocoleChirurgie
+  {
+    background-color:white !important;
+  
+  color:black !important;
+  
+  font-size:14px !important;
+  
+  padding:10px !important;
+  
+  margin:0px 10px 0px 10px !important;
+  
+  }
+
+  #dlgfooterErrorProtocoleChirurgie
+  {
+    background-color:#f2f2f2 !important;
+  
+  text-align:center !important;
+  padding:10px !important;
+  margin:0px 10px 10px 10px !important;
+  
+  }
+
+  
+
+#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#poidsPerdu,#satisfactionOperation,#sexe,#age,#taille,#poidsPersonne,#situationFamiliale,#enfants,#conclusion 
+{
+	display: none;
+}
+
+
+
+#presentation
+{
+	width: 100%;
+
+	margin: auto;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+	
+
+	border: 10px #e45a0c outset;
+
+	border-radius: 20px;
+
+	
+
+	font-size: 1.5em;
+
+	
+	text-align: center;
+
+	padding-top: 10px;
+
+	padding-bottom : 10px;
+
+
+}
+
+
+
+#presentation p
+{
+	text-align: justify;
+}
+
+#presentation span
+{
+	color:#e45a0c;
+}
+
+.smile_close_presentation
+{
+	color: #e45a0c;
+
+	cursor: pointer;
+}
+
+.smile_close_presentationbis
+{
+  color: #e45a0c;
+
+  
+}
+
+.sad
+{
+  color: #e45a0c;
+
+  
+}
+
+#errorpagenotfound
+{
+  width: 100%;
+
+  display: flex;
+
+
+  margin: auto;
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset ;
+
+  border-radius: 20px ;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#errorpagenotfound span
+{
+  color:#e45a0c;
+}
+
+#errorpagenotfound p
+{
+  
+
+  text-align: justify;
+}
+
+#aspects
+{
+	width: 100%;
+
+	
+
+	margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+	
+
+	border: 10px #e45a0c outset;
+
+	border-radius: 20px;
+
+text-align: center; 
+	
+
+	font-size: 1.5em;
+
+	padding-top: 10px;
+
+	padding-bottom : 10px;
+
+
+}
+
+#aspects p
+{
+	font-style: italic;
+
+	text-align: justify;
+}
+
+#aspects span
+{
+	color:#e45a0c;
+}
+
+#chrono
+{
+	color: #ed553b;
+}
+
+#aspects form
+{
+	display: none;
+}
+
+#aspectsResultats
+{
+  font-family: roboto_light_macroman;
+
+  font-style: normal !important;
+}
+
+
+
+#importance
+{
+	
+width: 100%;
+
+margin: auto;
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+
+
+border: 10px #e45a0c outset;
+
+border-radius: 20px;
+
+text-align: justify;
+	
+font-size: 1.5em;
+
+overflow-y: auto;
+
+padding-top: 10px;
+
+padding-bottom : 10px;
+
+
+}
+
+#importance span
+{
+	color:#e45a0c;
+}
+
+#importance p
+{
+	font-style: italic;
+
+	text-align: justify;
+}
+
+#valence
+{
+  width: 100%;
+
+margin: auto;
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+
+
+border: 10px #e45a0c outset;
+
+border-radius: 20px;
+
+text-align: justify;
+  
+font-size: 1.5em;
+
+overflow-y: auto;
+
+padding-top: 10px;
+
+padding-bottom : 10px;
+}
+
+#valence span
+{
+  color:#e45a0c;
+}
+
+#valence p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+table{
+        
+        border: 0.2em solid;
+        border-collapse:collapse ;
+        text-align:center;
+        
+        
+        
+        }
+        
+        th{
+        border: 0.1em solid white;
+        text-align:center;
+        padding:2em;
+        background-color:#e45a0c;
+        color: white;
+        
+        }
+        
+        td{
+        border: 0.1em solid #e45a0c; 
+        text-align:center;
+        padding:1em;
+        
+        }
+        
+        tr{
+        
+        }
+        
+        table tr:nth-child(even){
+        
+        background-color:#eee;
+        }
+        
+        table tr:nth-child(odd){
+        
+        background-color:#fff;
+        }
+
+        #protocoleChirurgieObesite
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#protocoleChirurgieObesite p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#protocoleChirurgieObesite span
+{
+  color:#e45a0c;
+}
+
+#operation
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#operation p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#operation span
+{
+  color:#e45a0c;
+}
+
+#aucunChoixOperation
+{
+  display: none;
+}
+
+#aucuneDateOperation
+{
+  display: none;
+}
+
+#formOperationDate
+{
+  display: none;
+}
+
+#poidsPerdu
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#poidsPerdu p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#poidsPerdu span
+{
+  color:#e45a0c;
+}
+
+#aucunPoidsPerdu
+{
+  display: none;
+}
+
+#satisfactionOperation
+{
+  width: 100%;
+
+  
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#satisfactionOperation p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#satisfactionOperation span
+{
+  color:#e45a0c;
+}
+
+#aucuneSatisfactionOperation
+{
+  display: none;
+}
+
+#sexe
+{
+  width: 100%;
+
+  
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#sexe p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#sexe span
+{
+  color:#e45a0c;
+}
+
+#aucunSexe
+{
+  display: none;
+}
+
+#age
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#age p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#age span
+{
+  color:#e45a0c;
+}
+
+#aucunAge
+{
+  display: none;
+}
+
+#taille
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#taille p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#taille span
+{
+  color:#e45a0c;
+}
+
+#aucuneTaille
+{
+  display: none;
+}
+
+#poidsPersonne
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#poidsPersonne p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#poidsPersonne span
+{
+  color:#e45a0c;
+}
+
+#aucunPoidsPersonne
+{
+  display: none;
+}
+
+#situationFamiliale
+{
+  width: 100%;
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#situationFamiliale p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#situationFamiliale span
+{
+  color:#e45a0c;
+}
+
+#aucuneSituationFamiliale
+{
+  display: none;
+}
+
+#enfants
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#enfants p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#enfants span
+{
+  color:#e45a0c;
+}
+
+#aucunChoixEnfants1
+{
+  display: none;
+}
+
+#aucunEnfants2
+{
+  display: none;
+}
+
+#formEnfants2
+{
+  display: none;
+}
+
+
+#conclusion
+{
+  width: 100%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+#conclusion2
+{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+#conclusion2 span
+{
+  color: #e45a0c;
+}
+
+#emailIncorrect2
+{
+  display: none;
+}
+
+#echecEnvoiEmail
+{
+  display: none;
+
+
+}
+
+#echecEnvoiForm
+{
+  display: none;
+}
+
+#remerciementsConclusion
+{
+  color: white;
+  border-radius: 20px;
+
+  display: none;
+
+  background-color: #e45a0c;
+
+  text-align: justify; 
+
+  font-family: roboto_light_macroman; 
+
+  font-style: normal !important;
+
+  padding-left: 5px;
+
+  padding-right: 5px;
+}
+
+#motConclusion
+{
+  text-align: justify !important; 
+}
+
+footer
+{
+  width:100%;
+}
+
+#footerDonuts
+{
+  width: 100% ;
+
+  
+
+  background-image: url("../resources/donutsFooter.png"); 
+
+  background-size: 100% 100%;
+
+  color: white;
+
+  font-size: 2em;
+
+  text-align: justify;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#definitionDonuts
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+
+  
+
+}
+
+#emailDonuts
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
+#copyrightDonuts
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input
+{
+  border-color: #e45a0c !important;
+
+
+}
+
+/* Styles pour les écrans moyens et grands OK*/ 
+
+@media (min-width: 992px)
+{
+
+}
+
+/* Styles pour les tablettes*/
+
+@media (min-width: 769px) and (max-width: 991px)
+{
+    #footerDonuts
+    {
+      width: 100% ;
+
+      
+
+      background-image: url("../resources/donutsFooter.png");  
+
+      background-size: 100% 100%;
+
+      color: white;
+
+      font-size: 2em;
+
+      text-align: justify;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    
+  
+}
+
+/* Styles pour les smartphones*/
+
+@media(max-width: 768px)
+{
+  #footerDonuts
+    {
+      width: 100% ;
+
+      
+
+      background-image: url("../resources/donutsFooter.png"); 
+
+      background-size: 100% 100%;
+
+      color: white;
+
+      font-size: 1em; /* valeur précédente : 2em */
+
+      text-align: justify;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #logoDonuts
+    {
+      width: 250px;
+      height: 250px;
+    }
+
+    #nojavascript
+{
+  display: none;
+  width: 100%;
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  
+  text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+
+#presentation
+{
+  width: 100%;
+
+  margin: auto;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  
+  text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#errorpagenotfound
+{
+  width: 100%;
+
+  display: flex;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#aspects
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#importance
+{
+  
+width: 100%;
+
+margin: auto;
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+
+
+border: 10px #e45a0c outset;
+
+border-radius: 20px;
+
+text-align: justify;
+  
+font-size: 1em; /* valeur précédente : 1.5em */
+
+overflow-y: auto;
+
+padding-top: 10px;
+
+padding-bottom : 10px;
+
+
+}
+
+#valence
+{
+  width: 100%;
+
+margin: auto;
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+
+
+border: 10px #e45a0c outset;
+
+border-radius: 20px;
+
+text-align: justify;
+  
+font-size: 1em; /* valeur précédente : 1.5em */
+
+overflow-y: auto;
+
+padding-top: 10px;
+
+padding-bottom : 10px;
+}
+
+#protocoleChirurgieObesite
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#operation,#enfants
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#poidsPerdu
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#satisfactionOperation,#situationFamiliale
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#sexe
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#age,#taille,#poidsPersonne
+{
+  width: 100%;
+
+  
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#conclusion
+{
+  width: 100%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+#conclusion2
+{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  text-align: center; 
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+

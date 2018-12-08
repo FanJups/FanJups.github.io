@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<routes>
+  <route url="/" module="Form" action="index" /> 
+  <route url="/email" module="Form" action="enterEmail" />
+  <route url="/sendingForm" module="Form" action="sendingForm" />
+  <route url="/sendingEmailForm" module="Form" action="sendingEmailForm" />  
+   
+</routes>     
