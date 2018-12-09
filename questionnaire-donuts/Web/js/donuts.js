@@ -1544,7 +1544,7 @@ function callBackAfterSending()
 
 	//Suite conclusion
 
-	conclusionAppears();
+	conclusionAppears(); 
 
 }
 
@@ -1564,7 +1564,13 @@ function callBackAfterSending()
 
 	    	$("#presentation").hide();
 
-	    	document.getElementById("aspects").style.display = "flex";
+	    	document.getElementById("presentation2").style.display = "flex";
+
+	    	$("#suivantPresentation2").click(function(){
+
+	    		$("#presentation2").hide();
+
+	    		document.getElementById("aspects").style.display = "flex";
 
 	    	//If the user doesn't enter at least one aspect, I show the form
 
@@ -1572,8 +1578,9 @@ function callBackAfterSending()
 
 	    	setTimeout(countDown40,20000); // 20 seconds -> user reading the rules //Maybe increase with a value bigger than 5 seconds
 
-	    	
+	    	});
+
         
-    }); //En cliquant sur smile, on passe à la 1ère question
+    }); //En cliquant sur smile, on passe à la présentation 2
 
 });
