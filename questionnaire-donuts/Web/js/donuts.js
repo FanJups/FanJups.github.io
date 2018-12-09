@@ -932,6 +932,8 @@ $(document).ready(function(){
 
 								document.getElementById("formOperationDate").style.display = "block";
 
+								document.getElementById("dateOperation").focus();
+
 								formOperationDateElt.addEventListener("submit",function(e){
 
 									var dateUser = formOperationDateElt.elements.dateOperation.value.trim();
@@ -945,6 +947,8 @@ $(document).ready(function(){
 										$("#operation").hide();
 
 										document.getElementById("poidsPerdu").style.display = "flex";
+
+										document.getElementById("namePoidsPerdu").focus();
 
 										formPoidsPerduElt.addEventListener("submit",function(e){
 
@@ -1168,6 +1172,8 @@ $(document).ready(function(){
 
 				document.getElementById("age").style.display = "flex";
 
+				document.getElementById("nameAge").focus();
+
 				formAgeElt.addEventListener("submit",function(e){
 
 					var ageDonuts = formAgeElt.elements.nameAge.value.trim();
@@ -1186,6 +1192,8 @@ $(document).ready(function(){
 
 						document.getElementById("taille").style.display = "flex";
 
+						document.getElementById("nameTaille").focus();
+
 						formTailleElt.addEventListener("submit",function(e){
 
 							var tailleDonuts = formTailleElt.elements.nameTaille.value.trim();
@@ -1203,6 +1211,8 @@ $(document).ready(function(){
 								$("#taille").hide();
 
 								document.getElementById("poidsPersonne").style.display = "flex";
+
+								document.getElementById("namePoidsPersonne").focus();
 
 								formPoidsPersonneElt.addEventListener("submit",function(e){
 
@@ -1285,6 +1295,8 @@ $(document).ready(function(){
 															document.getElementById("formEnfants1").style.display = "none";
 
 															document.getElementById("formEnfants2").style.display = "block";
+
+															document.getElementById("nameEnfants2").focus();
 
 															formEnfants2Elt.addEventListener("submit",function(e){
 
