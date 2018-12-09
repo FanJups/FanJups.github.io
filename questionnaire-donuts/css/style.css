@@ -492,7 +492,7 @@ align-items: center;
 
   
 
-#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#poidsPerdu,#satisfactionOperation,#sexe,#age,#taille,#poidsPersonne,#situationFamiliale,#enfants,#conclusion 
+#presentation2,#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#poidsPerdu,#satisfactionOperation,#sexe,#age,#taille,#poidsPersonne,#situationFamiliale,#enfants,#conclusion 
 {
 	display: none;
 }
@@ -544,6 +544,53 @@ align-items: center;
 {
 	color:#e45a0c;
 }
+
+#presentation2
+{
+  width: 100%;
+
+  margin: auto;
+
+
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  
+
+  font-size: 1.5em;
+
+  
+  text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+
+
+#presentation2 p
+{
+  text-align: justify;
+}
+
+#presentation2 span
+{
+  color:#e45a0c;
+}
+
 
 .smile_close_presentation
 {
@@ -1529,6 +1576,40 @@ align-items: center;
   margin: auto;
 
 display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  
+
+  font-size: 1em; /* valeur précédente : 1.5em */
+
+  
+  text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#presentation2
+{
+  width: 100%;
+
+  margin: auto;
+
+
 
 flex-direction: column;
 
