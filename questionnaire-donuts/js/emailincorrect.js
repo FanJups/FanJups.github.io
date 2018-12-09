@@ -6,6 +6,8 @@ $(document).ready(function(){
 
 	var formConclusionElt = document.getElementById("formConclusion") ;
 
+	document.getElementById("nameConclusion").focus();
+
 	
 	
 		formConclusionElt.addEventListener("submit",function(e){
