@@ -488,11 +488,13 @@ $(document).ready(function(){
 	} //fin countDown30
 
 
-	function remplissageFormulaire1()
+	function remplissageFormulaire1() 
 	{
 	
 
 	 	formAspectsElt = document.getElementById("formAspects"); 
+
+	 	
 
 	 	formAspectsElt.style.display = "block";
 
@@ -518,6 +520,9 @@ $(document).ready(function(){
 	 		
 
 	 		document.getElementById("aspectpsy").focus();
+
+	 	
+
 
 	 		e.preventDefault(); // Annulation de l'envoi des données 
 
@@ -1297,6 +1302,14 @@ $(document).ready(function(){
 
 																	finalUser.description();
 
+																	//JS to JSON object
+
+																	var dataToSend = JSON.stringify(finalUser);
+
+																	console.log("JSON");
+
+																	console.log(dataToSend);
+
 																	$("#enfants").hide();
 
 																	conclusionAppears();
@@ -1323,6 +1336,14 @@ $(document).ready(function(){
 														finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
 
 														finalUser.description();
+
+														//JS to JSON object
+
+																	var dataToSend = JSON.stringify(finalUser);
+
+																	console.log("JSON");
+
+																	console.log(dataToSend);
 
 
 														$("#enfants").hide();
@@ -1453,7 +1474,13 @@ $(document).ready(function(){
 
 	    	$("#presentation").hide();
 
-	    	document.getElementById("aspects").style.display = "flex";
+	    	document.getElementById("presentation2").style.display = "flex";
+
+	    	$("#suivantPresentation2").click(function(){
+
+	    		$("#presentation2").hide();
+
+	    		document.getElementById("aspects").style.display = "flex";
 
 	    	//If the user doesn't enter at least one aspect, I show the form
 
@@ -1461,8 +1488,12 @@ $(document).ready(function(){
 
 	    	setTimeout(countDown40,20000); // 20 seconds -> user reading the rules //Maybe increase with a value bigger than 5 seconds
 
+	    	});
+
+
+
 	    	
         
-    }); //En cliquant sur smile, on passe à la 1ère question
+    }); //En cliquant sur smile, on passe à la présentation 2
 
 });
