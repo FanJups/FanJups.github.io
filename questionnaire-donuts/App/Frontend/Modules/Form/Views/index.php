@@ -7,7 +7,7 @@
 			<div class="col-xs-12">
 
 				<p>
-					&nbsp; &nbsp; Nous vous remercions de prendre votre précieux temps pour répondre à ce questionnaire. Il est constitué de <span>13</span> étapes permettant d'étudier l'impact psychologique sur la prise de poids. S'il vous plaît, veuillez sourire en cliquant sur le smiley ci-dessous pour remplir le questionnaire.
+					&nbsp; &nbsp; Nous vous remercions de prendre de votre temps pour répondre à ce questionnaire. Il est constitué de <span>13</span> étapes permettant d'étudier votre rapport à votre poids. Vous êtes prêt(e), c'est parti, cliquez sur le smiley.
 
 				</p>
 
@@ -22,6 +22,28 @@
 
 		</div>
 
+		<!-- presentation2 -->
+
+		<div id="presentation2"  class="row"> 
+
+			<div class="col-xs-12">
+
+				<p>
+					&nbsp; &nbsp; Après avoir cliqué sur le bouton suivant, vous aurez <span>20</span> secondes pour lire la consigne. Vous aurez par la suite <span>40</span> secondes pour lister un maximum de mots. Inscrivez votre premier mot dans la case, validez-le. Inscrivez votre deuxième mot dans la même case, validez-le de la même façon, et ainsi de suite pour les suivants.
+
+				</p>
+
+				<br> 
+			 
+
+				<button id="suivantPresentation2" class="btn btn-warning">Suivant</button>
+
+			</div>
+			
+
+
+		</div>
+
 		<!-- aspects -->
 
 		<div id="aspects"  class="row">
@@ -29,7 +51,7 @@
 			<div class="col-xs-12">
 
 				<p>
-				<span>1 / 13 )</span> Quels sont, selon vous, les aspects de votre vie les plus impactés par votre poids ? Indiquez un maximum d’aspects qui peuvent se retrouver impactés par votre poids en 40 secondes. Le chronomètre se déclenchera dans 20 secondes dans le but de vous donner quelques instants de réflexion. Pour valider chaque aspect, il faut cliquer sur envoyer.
+				<span>1 / 13 )</span> Quels sont, selon vous, les aspects de votre vie les plus impactés par votre poids ? Indiquez un maximum d’aspects qui peuvent se retrouver impactés par votre poids en 40 secondes. Pour valider chaque aspect, il faut cliquer sur envoyer.
 				</p>
 
 				<div id="chrono">
