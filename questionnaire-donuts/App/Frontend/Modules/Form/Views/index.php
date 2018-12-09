@@ -812,7 +812,7 @@
 
 			<div id="wrapConclusion" class="col-xs-12">
 				
-				<p id="motConclusion">&nbsp; &nbsp; Nous vous remercions d'avoir rempli le questionnaire. Vous faites partie de cette étude. Si vous le souhaitez, nous vous prions d'enregistrer votre email (en cliquant sur le bouton ci-dessous) pour être au courant des résultats de notre étude. Merci d'avance.
+				<p id="motConclusion">&nbsp; &nbsp; Nous vous remercions d'avoir rempli ce questionnaire. Grâce à votre contribution, notre étude va pouvoir avancer ! Afin de poursuivre ensemble ce beau projet de développement d'un outil numérique pour les femmes, laissez-nous votre mail en cliquant ci-dessous. (Votre adresse email ne sera aucunement utilisée à des fins commerciales.)
 				</p>
 
 				
