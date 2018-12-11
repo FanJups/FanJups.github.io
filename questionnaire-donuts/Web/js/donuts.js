@@ -1,6 +1,6 @@
      
 
-$(document).ready(function(){
+$(document).ready(function(){ 
 
 	var formAspectsElt; 
 
@@ -1480,14 +1480,7 @@ $(document).ready(function(){
 
 	}
 
-	function footerDate()
-	{
-		var date = new Date();
-
-		var fullyear = date.getFullYear();
-
-		document.getElementById("copyrightDonuts").textContent = "donuts-asso © "+fullyear;
-	}
+	
 
 	// Générer un id unique pour lier la liste des aspects et les autres questions en base de données
 
@@ -1567,7 +1560,7 @@ function callBackAfterSending()
 
 		//En cliquant sur smile, on passe à la 1ère question
 
-		footerDate();  //mise à jour date footer
+		
 
 
 	    $("#smile").click(function(){
