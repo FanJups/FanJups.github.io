@@ -1379,7 +1379,7 @@ $(document).ready(function(){
 
 														
 
-														//SENDING
+														//SENDING 
 
 														$.ajax({
 														        
@@ -1407,7 +1407,7 @@ $(document).ready(function(){
 
 																	        	console.log("ERROR: ", e);
 																	        }
-														});
+														}); 
 
 
 														}
