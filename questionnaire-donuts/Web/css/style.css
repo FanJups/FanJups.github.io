@@ -430,7 +430,7 @@ align-items: center;
 
   
 
-    #dlgboxErrorProtocoleChirurgie 
+    #dlgboxErrorProtocoleChirurgie  
   {
 
     display:none ;
@@ -489,6 +489,50 @@ align-items: center;
   margin:0px 10px 10px 10px !important;
   
   }
+
+  #errorpagenotfound
+{
+  width: 100%;
+
+  margin: auto;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+  
+
+  border: 10px #e45a0c outset;
+
+  border-radius: 20px;
+
+  
+
+  font-size: 1.5em;
+
+  
+  text-align: center;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#errorpagenotfound p
+{
+  text-align: justify;
+}
+
+#errorpagenotfound span
+{
+  color:#e45a0c;
+}
 
   
 
@@ -1569,7 +1613,7 @@ align-items: center;
 }
 
 
-#presentation
+#presentation,#errorpagenotfound
 {
   width: 100%;
 
