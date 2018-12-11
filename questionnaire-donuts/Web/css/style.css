@@ -1345,7 +1345,7 @@ text-align: center;
 {
   font-style: italic;
 
-  text-align: justify;
+  text-align: justify; 
 }
 
 #enfants span
@@ -1354,6 +1354,11 @@ text-align: center;
 }
 
 #aucunChoixEnfants1
+{
+  display: none;
+}
+
+#echecEnvoiForm
 {
   display: none;
 }
@@ -1419,7 +1424,7 @@ text-align: center;
   color: #e45a0c;
 }
 
-#emailIncorrect2
+#emailIncorrect2,#echecEnvoiEmail
 {
   display: none;
 }
