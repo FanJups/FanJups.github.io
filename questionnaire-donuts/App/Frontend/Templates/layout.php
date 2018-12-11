@@ -454,6 +454,9 @@ align-items: center;
 
 
     ?>
+
+
+    <script src="/js/footer.js"></script> 
     
    
 
