@@ -943,7 +943,10 @@ $(document).ready(function(){
 									{
 										//Why not verifying if dateUser repects regex nn/nn/nnnn ? Think about it !
 
-										finalUser.dateOperationUser=dateUser;  // ATTRIBUT 4 OBJET FINAL
+										if(validateDateOperation(dateUser)===true)
+										{
+
+											finalUser.dateOperationUser=dateUser;  // ATTRIBUT 4 OBJET FINAL
 
 										$("#operation").hide();
 
@@ -1024,7 +1027,18 @@ $(document).ready(function(){
 
 
 
-									}else{
+										}else{ // date opération incorrecte
+
+											$("#dateOperationIncorrecte").show();
+
+
+
+
+										}
+
+										
+
+									}else{ // aucune date opération
 
 										$("#aucuneDateOperation").show();
 
@@ -1462,6 +1476,267 @@ $(document).ready(function(){
 		var donutsSum = donuts1 + donuts2;
 
 		return donutsSum;
+	}
+
+	function preValidateDateOperation(dateToVerify)
+	{
+		
+
+		var pattern= /^([0-9]{1,2})(\/)([0-9]{1,2})(\/)([0-9]{1,4})$/;
+
+		return pattern.test(dateToVerify.trim());
+
+	}
+
+	function validateDateOperation(dateToVerify)
+	{
+		var booleanTest = false; //Je suppose que la date est incorrecte
+
+		var monthsMax31 =[1,3,5,7,8,10,12];
+
+		var monthsMax30 =[4,6,9,11];
+
+		if(preValidateDateOperation(dateToVerify)===true)
+		{
+
+			var tabArray = getArrayWithoutSlashes(dateToVerify.trim());
+
+			//tabArray.length = 3
+
+			var day =  parseInt(tabArray[0]);
+			var month = parseInt(tabArray[1]);
+			var year = parseInt(tabArray[2]);
+
+			if(day>=1 && month>=1 && year>=1)
+			{
+				if(isLeapYear(year)===true)//Année bissextile 29fev
+				{
+					if(month<=12)
+					{
+						if(month ===2 ) //Février
+						{
+							if(day<=29)
+							{
+								booleanTest =true;
+
+							}else{
+
+								//Erreur
+
+
+							}
+
+						}else{ //Tous les mois sauf février
+
+							if(monthsMax31.includes(month)) //mois de 31 jours
+							{
+
+								if(day<=31)
+								{
+									booleanTest =true;
+
+								}else{
+
+									//Erreur
+
+
+								}
+
+
+
+							}else{// mois de 30 jours
+
+
+								if(day<=30)
+								{
+									booleanTest =true;
+
+								}else{
+
+									//Erreur
+
+
+								}
+
+
+							}
+
+
+						}
+
+					}else{
+
+						//Erreur mois > 12
+
+					}
+
+
+				}else{// Année non bissextile 28 fev
+
+					if(month<=12)
+					{
+
+						if(month ===2 ) //Février
+						{
+							if(day<=28)
+							{
+								booleanTest =true;
+
+							}else{
+
+								//Erreur
+
+
+							}
+
+						}else{ //Tous les mois sauf février
+
+							if(monthsMax31.includes(month)) //mois de 31 jours
+							{
+
+								if(day<=31)
+								{
+									booleanTest =true;
+
+								}else{
+
+									//Erreur
+
+
+								}
+
+
+
+							}else{// mois de 30 jours
+
+
+								if(day<=30)
+								{
+									booleanTest =true;
+
+								}else{
+
+									//Erreur
+
+
+								}
+
+
+							}
+
+
+						} // tous les mois sauf février
+
+					}else{
+
+						//Erreur : mois > 12
+
+
+
+					}
+
+
+
+				}// annee non bissextile
+
+			}else{
+
+
+				//Erreur : ! (day>=1 && month>=1 && year>=1)
+
+
+			}
+
+
+
+		}else{
+
+			//Erreur : pattern pas respecté
+		}
+
+		
+
+
+		return booleanTest;
+
+	}
+
+	function getArrayWithoutSlashes(text)
+	{
+		
+		var tab =[];
+
+		var number="";
+
+		for (var i=0; i <text.length ; i++) 
+		{ 
+			if(text[i] !="/")
+			{
+				number = number + text[i];
+
+				//Je récupère le dernier mot
+
+				if(i=== text.length -1)
+				{
+					
+
+					tab.push(number);
+
+				}
+
+			}else{
+
+			// "/"
+
+				if(text[i-1] !="/")
+				{
+					tab.push(number);
+
+					number="";
+
+				}else{
+
+				}
+
+			}
+
+		}
+
+		return tab;
+
+	}
+
+	function isLeapYear(year)
+	{
+
+		/*
+
+			https://fr.wikipedia.org/wiki/Ann%C3%A9e_bissextile
+
+			1- si l'année est divisible (et reste un nombre entier) par 4 et non divisible par 100, OU
+
+				(year % 4===0)&&(year % 100!=0)
+
+			2- si l'année est divisible (et reste un nombre entier) par 400.
+
+				year % 400 ===0
+
+
+
+
+		*/
+
+
+		var booleanTest = false;
+
+		if(  ((year % 4===0)&&(year % 100!=0)) || (year % 400 ===0)  )
+		{
+
+			booleanTest = true;
+
+		}
+
+		return booleanTest;
 	}
 
 	/**  functions End **/
