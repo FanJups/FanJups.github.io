@@ -145,6 +145,28 @@ class FormUser extends Entity
 
 	/* http://php.net/manual/fr/datetime.setdate.php */
 
+
+	/*
+
+		$patterni = "#^([0-9]{1,2})(\/)([0-9]{1,2})(\/)([0-9]{1,4})$#";
+
+$patterno ="#^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)(\d{4})$#";
+
+$x ="31/2/10";
+
+if(preg_match($patterni, $x))
+	    {
+	    	echo "SUCCESS";
+
+}else{
+	
+	echo "FAILURE";
+}
+
+
+
+	*/
+
 	public function setDateOperationUser($dateOperationUser) 
 	{
 		if( strlen(trim($dateOperationUser)) ==0 ) // Pas d'opération
