@@ -70,7 +70,7 @@ $(document).ready(function(){
             weekHeader: 'Sem.',
             firstDay: 1 ,
             dateFormat: 'd/m/yy',
-            maxDate:'+0d',
+            maxDate:'+1d',
             showOtherMonths:true,
             selectOtherMonths:true,
             changeMonth:true,
