@@ -51,7 +51,7 @@ date : samedi 03 novembre 2018
 
     <link rel="icon" href="/resources/logo.png">
 
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/logo.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/logo.ico"> 
 
     
 	<!-- [if IE]><link rel="shortcut icon" type="image/x-icon" href="/resources/logo.ico"><![endif]-->
@@ -272,7 +272,10 @@ date : samedi 03 novembre 2018
 
 		</div>
 
-		<?= $content ?>
+		<?= $content ?> 
+
+		<br>
+		<br>
 
 		
 
