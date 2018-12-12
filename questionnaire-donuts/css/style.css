@@ -899,7 +899,7 @@ text-align: center;
   display: none;
 }
 
-#aucuneDateOperation
+#aucuneDateOperation,#dateOperationIncorrecte
 {
   display: none;
 }
