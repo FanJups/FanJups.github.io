@@ -1145,7 +1145,7 @@ $(document).ready(function(){
 
 	function conclusionAppears()
 	{
-		document.getElementById("conclusion").style.display = "flex"; 
+		document.getElementById("conclusion").style.display = "flex";  
 
 				
 	}
@@ -1507,6 +1507,10 @@ $(document).ready(function(){
 			var month = parseInt(tabArray[1]);
 			var year = parseInt(tabArray[2]);
 
+			var dateToday = new Date();
+
+			
+
 			if(day>=1 && month>=1 && year>=1)
 			{
 				if(isLeapYear(year)===true)//Année bissextile 29fev
@@ -1517,7 +1521,14 @@ $(document).ready(function(){
 						{
 							if(day<=29)
 							{
-								booleanTest =true;
+								
+
+								var dateInput1 = new Date(year,month-1,day);
+
+								if(dateInput1 <= dateToday)
+								{
+									booleanTest =true;
+								}
 
 							}else{
 
@@ -1533,7 +1544,12 @@ $(document).ready(function(){
 
 								if(day<=31)
 								{
-									booleanTest =true;
+									var dateInput2 = new Date(year,month-1,day);
+
+									if(dateInput2 <= dateToday)
+									{
+										booleanTest =true;
+									}
 
 								}else{
 
@@ -1549,7 +1565,12 @@ $(document).ready(function(){
 
 								if(day<=30)
 								{
-									booleanTest =true;
+									var dateInput3 = new Date(year,month-1,day);
+
+									if(dateInput3 <= dateToday)
+									{
+										booleanTest =true;
+									}
 
 								}else{
 
@@ -1580,7 +1601,12 @@ $(document).ready(function(){
 						{
 							if(day<=28)
 							{
-								booleanTest =true;
+									var dateInput4 = new Date(year,month-1,day);
+
+									if(dateInput4 <= dateToday)
+									{
+										booleanTest =true;
+									}
 
 							}else{
 
@@ -1596,7 +1622,12 @@ $(document).ready(function(){
 
 								if(day<=31)
 								{
-									booleanTest =true;
+									var dateInput5 = new Date(year,month-1,day);
+
+									if(dateInput5 <= dateToday)
+									{
+										booleanTest =true;
+									}
 
 								}else{
 
@@ -1612,7 +1643,12 @@ $(document).ready(function(){
 
 								if(day<=30)
 								{
-									booleanTest =true;
+									var dateInput6 = new Date(year,month-1,day);
+
+									if(dateInput6 <= dateToday)
+									{
+										booleanTest =true;
+									}
 
 								}else{
 
