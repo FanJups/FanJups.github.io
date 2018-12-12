@@ -570,11 +570,11 @@ date : samedi 03 novembre 2018
 
 					<fieldset>
 
-						<div  class="form-group">
+						<div  class="form-group">  
 
 							
 
-							<input type="text" name="dateOperation" id="dateOperation" maxlength="0" class="form-control  " placeholder="Quand ?" size="60" required >
+							<input type="text" name="dateOperation" id="dateOperation" maxlength="10" title="Jour/Mois/Année" pattern="([0-9]{1,2})(\/)([0-9]{1,2})(\/)([0-9]{1,4})" class="form-control  " placeholder="Quand ?" size="60" required >
 							
 
 						</div>
@@ -584,6 +584,10 @@ date : samedi 03 novembre 2018
 						<br>
 
 						<span id="aucuneDateOperation"> S'il vous plaît, il faut choisir une date.</span>
+
+						<br>
+
+						<span id="dateOperationIncorrecte"> S'il vous plaît, il faut choisir une date correcte.</span>
 						
 
 					</fieldset>
