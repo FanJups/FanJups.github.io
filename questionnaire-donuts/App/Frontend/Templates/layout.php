@@ -277,11 +277,13 @@ date : samedi 03 novembre 2018
 		<br>
 		<br>
 
+		<div style="margin: 10px 0 10px 0;"></div> <!-- Just want to create space-->
+
 		
 
 		<footer class="row">
 
-			<div id="footerDonuts" class="col-xs-12">
+			<div id="footerDonuts" class="col-xs-12"> 
 
 				<div id="definitionDonuts">
 
@@ -345,9 +347,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+  border: 10px solid transparent;
 
-  border-radius: 20px;
+    border-image: url("/resources/donutsFooter.png") 30 round;
 
   
 
@@ -387,9 +389,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+  border: 10px solid transparent;
 
-  border-radius: 20px;
+    border-image: url("/resources/donutsFooter.png") 30 round;
 
   
 
