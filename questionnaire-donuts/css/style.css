@@ -93,9 +93,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset; 
+ border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
   
 
@@ -133,11 +133,9 @@ align-items: center;
    
     
     z-index:999999;
-    border-radius:10px;
-    
-    
-  
-    border: 10px #e59b10 groove; 
+     border: 10px solid transparent;
+
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
     padding:5px;
 
@@ -195,11 +193,9 @@ align-items: center;
    
     
     z-index:999999999999999 !important;
-    border-radius:10px !important;
-    
-    
-  
-    border: 10px #e59b10 groove !important;
+     border: 10px solid transparent;
+
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
     padding:5px !important;
 
@@ -255,11 +251,9 @@ align-items: center;
    
     
     z-index:999999999999 !important;
-    border-radius:10px !important;
-    
-    
-  
-    border: 10px #e59b10 groove !important;
+     border: 10px solid transparent;
+
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
     padding:5px !important;
 
@@ -316,11 +310,9 @@ align-items: center;
    
     
     z-index:99999999999 ;
-    border-radius:10px ;
-    
-    
-  
-    border: 10px #e59b10 groove ;
+     border: 10px solid transparent;
+
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
     padding:5px ;
 
@@ -376,11 +368,9 @@ align-items: center;
    
     
     z-index:99999999999 !important;
-    border-radius:10px !important;
-    
-    
-  
-    border: 10px #e59b10 groove !important;
+     border: 10px solid transparent;
+
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
     padding:5px !important;
 
@@ -438,11 +428,9 @@ align-items: center;
    
     
     z-index:99999999999 !important;
-    border-radius:10px !important;
-    
-    
-  
-    border: 10px #e59b10 groove !important;
+     border: 10px solid transparent;
+
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
     padding:5px !important;
 
@@ -513,11 +501,9 @@ justify-content: center;
 
 align-items: center;
 
-	
+  border: 10px solid transparent;
 
-	border: 10px #e45a0c outset;
-
-	border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 	
 
@@ -561,9 +547,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
   
 
@@ -631,9 +617,9 @@ align-items: center;
 
 	
 
-	border: 10px #e45a0c outset;
+	 border: 10px solid transparent;
 
-	border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
 	
@@ -693,9 +679,9 @@ align-items: center;
 
 
 
-border: 10px #e45a0c outset;
+ border: 10px solid transparent;
 
-border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: justify;
 	
@@ -736,9 +722,9 @@ align-items: center;
 
 
 
-border: 10px #e45a0c outset;
+ border: 10px solid transparent;
 
-border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: justify;
   
@@ -821,9 +807,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -866,9 +852,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -926,9 +912,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -979,9 +965,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1032,9 +1018,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1082,9 +1068,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1132,9 +1118,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1182,9 +1168,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1231,9 +1217,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1281,9 +1267,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1333,9 +1319,9 @@ text-align: center;
   justify-content: space-around;
   align-items: center;
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
   text-align: center; 
   
@@ -1356,9 +1342,9 @@ text-align: center;
   justify-content: space-around;
   align-items: center;
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
   text-align: center; 
   
@@ -1552,9 +1538,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
   
 
@@ -1585,9 +1571,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
   
 
@@ -1619,9 +1605,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
   
 
@@ -1655,9 +1641,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1686,9 +1672,9 @@ align-items: center;
 
 
 
-border: 10px #e45a0c outset;
+ border: 10px solid transparent;
 
-border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: justify;
   
@@ -1717,9 +1703,9 @@ align-items: center;
 
 
 
-border: 10px #e45a0c outset;
+ border: 10px solid transparent;
 
-border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: justify;
   
@@ -1750,9 +1736,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1784,9 +1770,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1818,9 +1804,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1852,9 +1838,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1886,9 +1872,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1920,9 +1906,9 @@ align-items: center;
 
   
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
 text-align: center; 
   
@@ -1944,9 +1930,9 @@ text-align: center;
   justify-content: space-around;
   align-items: center;
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
   text-align: center; 
   
@@ -1967,9 +1953,9 @@ text-align: center;
   justify-content: space-around;
   align-items: center;
 
-  border: 10px #e45a0c outset;
+   border: 10px solid transparent;
 
-  border-radius: 20px;
+  border-image: url("../resources/donutsFooter.png") 30 round;
 
   text-align: center; 
   
