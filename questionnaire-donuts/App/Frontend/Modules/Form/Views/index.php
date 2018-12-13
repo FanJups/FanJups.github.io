@@ -2,7 +2,7 @@
 
 		<!-- presentation -->
 
-		<div id="presentation"  class="row"> 
+		<div id="presentation"  class="row">  
 
 			<div class="col-xs-12">
 
@@ -10,11 +10,11 @@
 					&nbsp; &nbsp; Nous vous remercions de prendre de votre temps pour répondre à ce questionnaire. Il est constitué de <span>13</span> étapes permettant d'étudier votre rapport à votre poids. Vous êtes prêt(e), c'est parti, cliquez sur le smiley.
 
 				</p>
-
+ 
 				<br> 
 			 
 
-				<strong style=" font-size: 2em ; "> <i id="smile"  class="fa fa-smile-o smile_close_presentation" aria-hidden="true"></i></strong>
+				<strong style=" font-size: 3em ; "> <i id="smile"  class="fa fa-smile-o smile_close_presentation" aria-hidden="true"></i></strong>
 
 			</div>
 			
@@ -290,7 +290,7 @@
 					</fieldset> 
 					
 
-				</form>
+				</form>   
 
 				<form id="formOperationDate">
 
@@ -300,7 +300,7 @@
 
 							
 
-							<input type="text" name="dateOperation" id="dateOperation" maxlength="0" class="form-control  " placeholder="Quand ?" size="60" required >
+							<input type="text" name="dateOperation" id="dateOperation" maxlength="10" title="Jour/Mois/Année" pattern="([0-9]{1,2})(\/)([0-9]{1,2})(\/)([0-9]{1,4})" class="form-control  " placeholder="Quand ?" size="60" required >
 							
 
 						</div>
@@ -310,6 +310,10 @@
 						<br>
 
 						<span id="aucuneDateOperation"> S'il vous plaît, il faut choisir une date.</span>
+
+						<br>
+
+						<span id="dateOperationIncorrecte"> S'il vous plaît, il faut choisir une date correcte.</span>
 						
 
 					</fieldset>
