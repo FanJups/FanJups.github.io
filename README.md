@@ -14,7 +14,7 @@
               1-5) questionnaire_donuts_V2_without_php_mysql
 
 
-   Le but de la branche master c'est de présenter les projets web sans base de donnée. Pour l'instant, il y a uniquement le projet DONUTS. Par conséquent, elle contient le code source le plus à jour et stable de la version sans base de donnée de DONUTS. Actuellement, elle contient le même code source que la branche questionnaire_donuts_V2_without_php_mysql.
+   Le but de la branche master c'est de présenter les projets web sans base de donnée. Pour l'instant, il y a uniquement le projet DONUTS. Par conséquent, elle contient le code source le plus à jour  de la version sans base de donnée de DONUTS. Actuellement, elle contient le même code source que la branche questionnaire_donuts_V2_without_php_mysql.
    
    La branche questionnaire_donuts_V1_without_php_mysql contient le code source de la 1ère version  du site DONUTS sans base de donnée.
    
