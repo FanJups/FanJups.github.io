@@ -1,0 +1,12 @@
+# DONUTS VERSION 1  ( MODIFICATIONS TERMINEES)
+
+
+
+Questionnaire DONUTS : Développement Outils Numériques Utiles Travail  Surpoids : réalisation d'un questionnaire pour cerner l'impact psychologique sur la prise de poids ---> https://questionnaire-donuts-test.000webhostapp.com/
+
+
+La branche questionnaire_donuts_V1_with_php_mysql contient le code source de la 1ère version  du site DONUTS avec base de donnée.
+  
+   ## Fonctionnement de la version V1 (modifications terminées) de DONUTS 
+   
+   Une personne remplit le questionnaire composé de 13 questions et si cette personne désire transmettre son email, elle peut le faire. Ensuite, ces données sont enregistrées et sont téléchargées manuellement pour une étude des résultats.
