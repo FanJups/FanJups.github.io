@@ -213,15 +213,21 @@
 
 						<div  class="form-group">
 
-							<input type="radio" name="nameprotocoleChirurgieObesite" value="Oui (J'ai entrepris des démarches.)" id="oui1">
+							<input type="radio" name="nameprotocoleChirurgieObesite" value="Oui (J'y ai déjà eu recours)" id="oui1">
 							<br>
-							<label for="oui1">Oui (J'ai entrepris des démarches)</label>
+							<label for="oui1">Oui (J'y ai déjà eu recours)</label>
 
 							<br>
 
-							<input type="radio" name="nameprotocoleChirurgieObesite" value="Oui (Je n'ai pas entrepris de démarche.)" id="oui2">
+							<input type="radio" name="nameprotocoleChirurgieObesite" value="Oui (J'ai entrepris des démarches.)" id="oui2">
 							<br>
-							<label for="oui2">Oui (Je n'ai pas entrepris de démarche)</label>
+							<label for="oui2">Oui (J'ai entrepris des démarches)</label>
+
+							<br>
+
+							<input type="radio" name="nameprotocoleChirurgieObesite" value="Oui (Je n'ai pas entrepris de démarche.)" id="oui3">
+							<br>
+							<label for="oui3">Oui (Je n'ai pas entrepris de démarche)</label>
 
 							<br>
 
@@ -461,7 +467,7 @@
 
 				<p>
 
-					<span>8 / 13 )</span> Sexe
+					<span>8 / 13 )</span> Quel est votre sexe ?
 					
 				</p>
 
@@ -517,7 +523,7 @@
 
 				<p>
 
-					<span>9 / 13 )</span> Âge
+					<span>9 / 13 )</span> Quel est votre âge ?
 					
 				</p>
 
@@ -565,7 +571,7 @@
 
 				<p>
 
-					<span>10 / 13 )</span> Taille en cm (Note : 1,70 m = 170 cm)
+					<span>10 / 13 )</span> Quel est votre taille en cm (Note : 1,70 m = 170 cm)
 					
 				</p>
 
@@ -613,7 +619,7 @@
 
 				<p>
 
-					<span>11 / 13 )</span> Poids en kg
+					<span>11 / 13 )</span> Quel est votre poids en kg
 					
 				</p>
 
@@ -695,12 +701,6 @@
 							<br>
 							<label for="mariee">Mariée</label>
 
-							<br>
-
-							<input type="radio" name="nameSituationFamiliale" value="Divorcée" id="divorcee">
-							<br>
-							<label for="divorcee">Divorcée</label>
-
 							
 							
 						</div>
@@ -711,7 +711,7 @@
 
 						<br>
 
-						<span id="aucuneSituationFamiliale"> S'il vous plaît, il faut faire un choix parmi ces 5 valeurs.</span>
+						<span id="aucuneSituationFamiliale"> S'il vous plaît, il faut faire un choix parmi ces 4 valeurs.</span>
 						
 
 					</fieldset> 
