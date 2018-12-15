@@ -52,6 +52,8 @@ $(document).ready(function(){
 
 	var listeAspectUser =[]; // liste des aspects + importance + valence 
 
+	var compteurAspectsMax10 =0;
+
 	//Working on surgery date 
 
 	$(function(){
@@ -498,7 +500,20 @@ $(document).ready(function(){
 
 	 	formAspectsElt = document.getElementById("formAspects"); 
 
-	 	formAspectsElt.style.display = "block";
+	 	if(compteurAspectsMax10 === 10)
+	 	{
+
+	 		//Hide form formAspectsElt 
+
+	 		formAspectsElt.style.display = "none";
+
+	 		$("#aspectsMax10").show();
+
+	 	}else{
+
+	 		// inférieur à 10
+
+	 		formAspectsElt.style.display = "block"; 
 
 	 	document.getElementById("aspectpsy").focus();
 
@@ -510,6 +525,8 @@ $(document).ready(function(){
 	 		if( aspect.length !=0 )
 	 		{
 	 			listeAspects.push(aspect);
+
+	 			compteurAspectsMax10++;
 
 	 			document.getElementById("aspectsResultats").appendChild(document.createTextNode(' "'+aspect+'" '));
 
@@ -528,6 +545,11 @@ $(document).ready(function(){
 
 	 	}); //En cliquant sur submit, on saisit les aspects
 
+
+
+	 	}
+
+	 	
         
 	}
 
