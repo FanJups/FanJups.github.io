@@ -9,6 +9,5 @@ La branche questionnaire_donuts_V2_without_php_mysql contient le code source de 
   
    ## Fonctionnement de la version V2 (modifications en cours) de DONUTS 
    
-   Une personne remplit le questionnaire composé de 13 questions et si cette personne désire transmettre son email, elle peut le faire.
-   La version V2 aura un design amélioré; certaines questions seront reformulées.
+   La version V2 aura un design amélioré; certaines questions seront reformulées. De plus , les données enregistrées ne seront pas téléchargées manuellement mais envoyées par email tous les jeudis à 10h , heure de France (GMT+1) à l'équipe chargée d'analyser les résultats.
    
