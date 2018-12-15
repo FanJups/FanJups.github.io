@@ -29,7 +29,7 @@
 			<div class="col-xs-12">
 
 				<p>
-					&nbsp; &nbsp; Après avoir cliqué sur le bouton suivant, vous aurez <span>20</span> secondes pour lire la consigne. Vous aurez par la suite <span>40</span> secondes pour lister un maximum de mots. Inscrivez votre premier mot dans la case, validez-le. Inscrivez votre deuxième mot dans la même case, validez-le de la même façon, et ainsi de suite pour les suivants.
+					&nbsp; &nbsp; Après avoir cliqué sur le bouton suivant, vous aurez <span>20</span> secondes pour lire la consigne. Vous aurez par la suite <span>40</span> secondes pour lister un maximum de <span>10</span> mots. Inscrivez votre premier mot dans la case, validez-le. Inscrivez votre deuxième mot dans la même case, validez-le de la même façon, et ainsi de suite pour les suivants.
 
 				</p>
 
@@ -51,7 +51,7 @@
 			<div class="col-xs-12">
 
 				<p>
-				<span>1 / 13 )</span> Quels sont, selon vous, les aspects de votre vie les plus impactés par votre poids ? Indiquez un maximum d’aspects qui peuvent se retrouver impactés par votre poids en 40 secondes. Pour valider chaque aspect, il faut cliquer sur envoyer.
+				<span>1 / 13 )</span> Quels sont, selon vous, les aspects de votre vie les plus impactés par votre poids ? Indiquez <span>10</span> aspects maximum qui peuvent se retrouver impactés par votre poids en 40 secondes. Pour valider chaque aspect, il faut cliquer sur envoyer.
 				</p>
 
 				<div id="chrono">
@@ -90,6 +90,8 @@
     				
 
     			</p>
+
+    			<span id="aspectsMax10">Merci pour les 10 aspects</span>
 				
 
 			</div>
@@ -812,7 +814,7 @@
 
 		<!-- conclusion -->
 
-		<div id="conclusion"  class="row">  
+		<div id="conclusion"  class="row">   
 
 			<div id="wrapConclusion" class="col-xs-12">
 				
