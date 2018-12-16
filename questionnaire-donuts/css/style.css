@@ -480,7 +480,7 @@ align-items: center;
 
   
 
-#presentation2,#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#poidsPerdu,#satisfactionOperation,#sexe,#age,#taille,#poidsPersonne,#situationFamiliale,#enfants,#conclusion 
+#presentation2,#aspects,#importance,#valence,#protocoleChirurgieObesite,#operation,#poidsPerdu,#satisfactionOperation,#sexe,#age,#taille,#poidsPersonne,#situationFamiliale,#enfants,#connaissance,#conclusion 
 {
 	display: none;
 }
@@ -1317,6 +1317,63 @@ text-align: center;
   display: none;
 }
 
+#connaissance
+{
+  width: 100%;
+
+  
+  margin: auto;
+
+  
+
+
+
+flex-direction: column;
+
+justify-content: space-around;
+
+align-items: center;
+
+  
+
+   border: 10px solid transparent;
+
+  border-image: url("../resources/donutsFooter.png") 30 round;
+
+text-align: center; 
+  
+
+  font-size: 1.5em;
+
+  padding-top: 10px;
+
+  padding-bottom : 10px;
+
+
+}
+
+#connaissance p
+{
+  font-style: italic;
+
+  text-align: justify;
+}
+
+#connaissance span
+{
+  color:#e45a0c;
+}
+
+#nameGroupeFacebook,#nameAutre
+{
+  display: none;
+}
+
+#aucuneConnaissance,#aucunGroupe,#aucunePrecision
+{
+  display: none;
+}
+
 
 #conclusion
 {
@@ -1452,7 +1509,7 @@ footer
   align-items: center;
 }
 
-input
+input,select
 {
   border-color: #e45a0c !important;
 
@@ -1895,7 +1952,7 @@ text-align: center;
 
 }
 
-#age,#taille,#poidsPersonne
+#age,#taille,#poidsPersonne,#connaissance
 {
   width: 100%;
 
