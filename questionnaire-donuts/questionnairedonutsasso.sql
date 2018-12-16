@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 08 Décembre 2018 à 16:12
+-- Généré le :  Dim 16 Décembre 2018 à 18:45
 -- Version du serveur :  5.6.17-log
 -- Version de PHP :  7.0.3
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `aspectsdonuts` (
   `uniqueIdAspect` varchar(255) NOT NULL,
   `date_time_aspect` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `emaildonuts` (
   `email` varchar(255) NOT NULL,
   `date_time_email` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -74,8 +74,9 @@ CREATE TABLE IF NOT EXISTS `formdonuts` (
   `situationFamilialeUser` varchar(255) NOT NULL,
   `isEnfantsUser` varchar(4) NOT NULL,
   `nbreEnfantsUser` bigint(11) NOT NULL,
+  `connaissance` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
