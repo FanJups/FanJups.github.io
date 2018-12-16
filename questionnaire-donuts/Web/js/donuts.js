@@ -32,6 +32,8 @@ $(document).ready(function(){
 
 	var formEnfants2Elt = document.getElementById("formEnfants2") ;
 
+	var formConnaissanceElt = document.getElementById("formConnaissance") ;
+
 	
 
 	var listeAspects =[];
@@ -131,6 +133,7 @@ $(document).ready(function(){
 		this.situationFamilialeUser= situationFamiliale;
 		this.isEnfantsUser = isEnfants;
 		this.nbreEnfantsUser = nbreEnfants;
+		this.connaissanceUser="";
 		this.uniqueIdUser ="";
 
 		/*
@@ -152,6 +155,8 @@ $(document).ready(function(){
     		console.log("taille -> "+this.taillePersonneUser+" poids -> "+this.poidsPersonneUser+" situationFamiliale -> "+this.situationFamilialeUser);
 
     		console.log("isEnfants -> "+this.isEnfantsUser+" nbreEnfants -> "+this.nbreEnfantsUser);
+
+    		console.log("connaissanceUser -> "+this.connaissanceUser);
 
     		console.log("uniqueIdUser -> "+this.uniqueIdUser);
 
@@ -1341,44 +1346,12 @@ $(document).ready(function(){
 
 																	finalUser.nbreEnfantsUser=nbreEnfantsDonutsInt; // ATTRIBUT 13 OBJET FINAL
 
-																	finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
+																	$("#enfants").hide();
 
-																	//finalUser.description();  
 
-																	//JS to JSON object
+																	connaissanceEtSuite();
 
-																	//var dataToSend = JSON.stringify(finalUser);
-
-														
-
-																	//SENDING  
-
-																	$.ajax({
-																	        method: "POST",
-																	        //contentType: "application/json",
-																	        url: "/sendingForm",
-																	        
-																	        data: JSON.stringify(finalUser), 
-																	        //dataType: 'json',
-																	        
-
-																	        success: function(data){
-																	            //callBackAfterSending();
-
-																	            console.log("SUCCESS: ", data);
-
-																	            callBackAfterSending();
-																	        },
-
-																	        error: function(e){
-
-																	        	//alert("KO");
-
-																	        	$("#echecEnvoiForm").show();
-
-																	        	console.log("ERROR: ", e);
-																	        }
-																	});
+																	
 
 																	
 
@@ -1401,45 +1374,12 @@ $(document).ready(function(){
 
 														finalUser.nbreEnfantsUser=0; // ATTRIBUT 13 OBJET FINAL
 
-														finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
-
-														//finalUser.description();
-
-														//JS to JSON object
-
-														//var dataToSend = JSON.stringify(finalUser);
-
 														
 
-														//SENDING 
+														$("#enfants").hide();
 
-														$.ajax({
-														        
-														        method: "POST",
-																	        //contentType: "application/json",
-																	        url: "/sendingForm",
-																	        
-																	        data: JSON.stringify(finalUser), 
-																	        //dataType: 'json',
-																	        
 
-																	        success: function(data){
-																	            //callBackAfterSending();
-
-																	            console.log("SUCCESS: ", data);
-
-																	            callBackAfterSending();
-																	        },
-
-																	        error: function(e){
-
-																	        	//alert("KO");
-
-																	        	$("#echecEnvoiForm").show();
-
-																	        	console.log("ERROR: ", e);
-																	        }
-														}); 
+														connaissanceEtSuite();
 
 
 														}
@@ -1577,7 +1517,7 @@ function ajaxPost(url, data, callback, isJson)
 function callBackAfterSending()
 {
 
-	$("#enfants").hide();
+	$("#connaissance").hide();
 
 	//Suite conclusion
 
@@ -1880,6 +1820,169 @@ function preValidateDateOperation(dateToVerify)
 		}
 
 		return booleanTest;
+	}
+
+	function connaissanceEtSuite()
+	{
+		// https://www.dyn-web.com/tutorials/forms/select/selected.php
+
+		document.getElementById("connaissance").style.display = "flex";
+
+		$('#nameConnaissance').change(function(){
+
+		    if( $(this).val() == 'Groupe Facebook :'){
+
+		        $("#nameGroupeFacebook").show();
+
+		    }else{
+
+		        $("#nameGroupeFacebook").hide();
+
+		        $("#aucunGroupe").hide();
+
+		        $("#echecEnvoiForm").hide();
+		    }
+
+		    if( $(this).val() == 'Autre :'){
+
+		        $("#nameAutre").show();
+
+		    }else{
+		        $("#nameAutre").hide();
+
+		        $("#aucunePrecision").hide();
+
+		        $("#echecEnvoiForm").hide();
+		    }
+		});
+
+		formConnaissanceElt.addEventListener("submit",function(e){
+
+			if( $('#nameConnaissance').val() == '')
+			{
+				//Erreur
+
+				$("#aucuneConnaissance").show();
+
+			}else{
+
+				if( $('#nameConnaissance').val() == 'Groupe Facebook :')
+				{
+
+					if($('#nameGroupeFacebook').val().trim().length !=0)
+					{
+
+						finalUser.connaissanceUser = $('#nameConnaissance').val() + ' '+$('#nameGroupeFacebook').val();
+
+						//ok
+
+						finalSending();
+
+						
+
+					}else{
+
+						//Erreur
+
+						$("#aucunGroupe").show();
+
+
+					}
+
+
+				}
+				
+
+				if( $('#nameConnaissance').val() == 'Autre :')
+				{
+
+					if($('#nameAutre').val().trim().length !=0)  
+					{
+
+						finalUser.connaissanceUser = $('#nameConnaissance').val() +' '+ $('#nameAutre').val();
+
+						//ok
+
+						finalSending();
+
+					}else{
+
+						//Erreur
+
+						$("#aucunePrecision").show();
+
+
+					}
+
+				}
+
+				if( $('#nameConnaissance').val() != 'Autre :' && $('#nameConnaissance').val() != 'Groupe Facebook :')
+				{
+					finalUser.connaissanceUser = $('#nameConnaissance').val();
+
+					//ok
+
+					finalSending();
+
+					
+
+				}
+				
+
+
+			}
+
+
+
+			e.preventDefault();
+		});
+
+
+
+	}
+
+	function finalSending()
+	{
+
+		finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
+
+		//finalUser.description();  
+
+		//JS to JSON object
+
+		//var dataToSend = JSON.stringify(finalUser);
+
+														
+
+		//SENDING  
+
+		$.ajax({
+				 method: "POST",
+				//contentType: "application/json",
+				url: "/sendingForm",
+																	        
+				data: JSON.stringify(finalUser), 
+				//dataType: 'json',
+																	        
+
+				success: function(data){
+					//callBackAfterSending();
+
+					console.log("SUCCESS: ", data);
+
+					callBackAfterSending();
+				},
+
+				error: function(e){
+
+					//alert("KO");
+
+					$("#echecEnvoiForm").show();
+
+					console.log("ERROR: ", e);
+				}
+		});
+
 	}
 
 
