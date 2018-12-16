@@ -127,7 +127,7 @@
 
 							</table>
 
-							<button type="submit" class="btn btn-warning">Envoyer</button> 
+							<button type="submit" class="btn btn-warning center-block">Envoyer</button> 
 
 
 						</fieldset>
@@ -172,7 +172,7 @@
 
 							</table>
 
-							<button type="submit" class="btn btn-warning">Envoyer</button>
+							<button type="submit" class="btn btn-warning center-block">Envoyer</button>
 							
 
 
