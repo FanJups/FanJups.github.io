@@ -60,6 +60,8 @@ class FormUser extends Entity
 
 	protected $nbreEnfantsUser ; 
 
+	protected $connaissance;
+
 	protected $date;
 
 
@@ -404,6 +406,23 @@ if(preg_match($patterni, $x))
 		
 		$this->nbreEnfantsUser = $nbreEnfantsUser;
 
+	}
+
+		//connaissance
+
+	public function setConnaissance($connaissance)
+	{
+		
+		
+			$this->connaissance = $connaissance;
+
+		
+
+	}
+
+	public function getConnaissance()
+	{
+		return $this->connaissance ; 
 	}
 
 	public function setDate(\DateTime $date)
