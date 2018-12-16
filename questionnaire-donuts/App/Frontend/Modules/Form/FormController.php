@@ -80,6 +80,7 @@ class FormController extends BackController
     $situationFamilialeUser = $data->situationFamilialeUser;
     $isEnfantsUser = $data->isEnfantsUser;
     $nbreEnfantsUser = $data->nbreEnfantsUser;
+    $connaissance = $data->connaissanceUser;
     $uniqueIdUser = $data->uniqueIdUser;  
 
     
@@ -139,6 +140,7 @@ class FormController extends BackController
     $formUser->setSituationFamilialeUser($situationFamilialeUser);
     $formUser->setIsEnfantsUser($isEnfantsUser);
     $formUser->setNbreEnfantsUser($nbreEnfantsUser);
+    $formUser->setConnaissance($connaissance);
     $formUser->setUniqueIdFormUser($uniqueIdUser); 
 
     //insertion de formUser 
