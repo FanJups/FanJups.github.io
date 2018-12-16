@@ -571,7 +571,7 @@
 
 				<p>
 
-					<span>8 / 10 )</span> Quel est votre taille en cm (Note : 1,70 m = 170 cm)
+					<span>8 / 10 )</span> Quel est votre taille en cm (Note : 1,70 m = 170 cm) ?
 					
 				</p>
 
@@ -619,7 +619,7 @@
 
 				<p>
 
-					<span>8 / 10 )</span> Quel est votre poids en kg
+					<span>8 / 10 )</span> Quel est votre poids en kg ?
 					
 				</p>
 
@@ -667,7 +667,7 @@
 
 				<p>
 
-					<span>9 / 10 )</span> Situation familiale
+					<span>9 / 10 )</span> Quelle est votre situation familiale ?
 					
 				</p>
 
@@ -801,7 +801,85 @@
 				</form> 
 
 
+				
+				
+
+			</div>
+			
+
+
+		</div>
+
+		<!-- connaissance questionnaire -->
+
+		<div id="connaissance" class="row"> 
+
+			<div class="col-xs-12">
+
+				<p>
+
+					<span>10 / 10 )</span> Comment avez-vous eu connaissance de cette étude ?
+					
+				</p>
+
 				<br>
+
+				
+
+				<form id="formConnaissance">
+
+					<fieldset>
+
+						<div  class="form-group">
+
+							<select name="nameConnaissance" id="nameConnaissance" class="form-control" required>
+
+								
+								<option value="" selected disabled hidden>Liste déroulante</option>
+								<option value="LinkedIn">LinkedIn</option>
+								<option value="Groupe Facebook :">Groupe Facebook : Lequel ?</option>
+								<option value="Publication Facebook">Publication Facebook</option>
+								<option value="Ami(e)s">Ami(e)s</option>
+								<option value="Famille">Famille</option>
+								<option value="Autre :">Autre : Précisez</option>
+								
+
+							</select>
+
+							<div style="margin: 10px 0 10px 0;"></div> <!-- Just want to create space-->
+
+							<input type="text" name="nameGroupeFacebook" id="nameGroupeFacebook" class="form-control  " placeholder="Groupe Facebook : Lequel ?"  >
+
+							<div style="margin: 10px 0 10px 0;"></div> <!-- Just want to create space-->
+
+							<span id="aucunGroupe"> S'il vous plaît, il faut saisir le nom du groupe.</span>
+
+							<div style="margin: 10px 0 10px 0;"></div> <!-- Just want to create space-->
+
+							<input type="text" name="nameAutre" id="nameAutre" class="form-control  " placeholder="Autre : Précisez"   >
+
+							<div style="margin: 10px 0 10px 0;"></div> <!-- Just want to create space-->
+
+							<span id="aucunePrecision"> S'il vous plaît, il faut préciser.</span>
+							
+						
+						</div>
+
+						<br>
+
+						<button  type="submit" class="btn btn-warning">Envoyer</button>
+
+						<br>
+
+						<span id="aucuneConnaissance"> S'il vous plaît, il faut choisir une option.</span> 
+						
+
+					</fieldset>
+					
+
+				</form>
+
+				<div style="margin: 10px 0 10px 0;"></div> <!-- Just want to create space-->
 
 				<span id="echecEnvoiForm">Nous sommes désolés car le formulaire n'a pas été enregistré. Nous vous prions de réessayer l'envoi. Merci de votre compréhension.</span>
 				
