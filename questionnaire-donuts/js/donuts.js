@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 
-	var formAspectsElt; 
+	var formAspectsElt;  
 
 	var formAspectsImportanceElt = document.getElementById("formAspects&Importance") ; 
 
@@ -31,6 +31,8 @@ $(document).ready(function(){
 	var formEnfants1Elt = document.getElementById("formEnfants1") ;
 
 	var formEnfants2Elt = document.getElementById("formEnfants2") ;
+
+	var formConnaissanceElt = document.getElementById("formConnaissance") ;
 
 	
 
@@ -131,6 +133,7 @@ $(document).ready(function(){
 		this.situationFamilialeUser= situationFamiliale;
 		this.isEnfantsUser = isEnfants;
 		this.nbreEnfantsUser = nbreEnfants;
+		this.connaissanceUser="";
 		this.uniqueIdUser ="";
 
 		this.description=function(){
@@ -152,6 +155,8 @@ $(document).ready(function(){
     		console.log("isEnfants -> "+this.isEnfantsUser+" nbreEnfants -> "+this.nbreEnfantsUser);
 
     		console.log("uniqueIdUser -> "+this.uniqueIdUser);
+
+    		console.log("connaissanceUser -> "+this.connaissanceUser);
 
 		};
 
@@ -1347,21 +1352,11 @@ $(document).ready(function(){
 
 																	finalUser.nbreEnfantsUser=nbreEnfantsDonutsInt; // ATTRIBUT 13 OBJET FINAL
 
-																	finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
-
-																	finalUser.description();
-
-																	//JS to JSON object
-
-																	var dataToSend = JSON.stringify(finalUser);
-
-																	console.log("JSON");
-
-																	console.log(dataToSend);
-
 																	$("#enfants").hide();
 
-																	conclusionAppears();
+																	connaissanceEtSuite();
+
+																	
 
 																}else{
 
@@ -1382,24 +1377,11 @@ $(document).ready(function(){
 
 														finalUser.nbreEnfantsUser=0; // ATTRIBUT 13 OBJET FINAL
 
-														finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
-
-														finalUser.description();
-
-														//JS to JSON object
-
-																	var dataToSend = JSON.stringify(finalUser);
-
-																	console.log("JSON");
-
-																	console.log(dataToSend);
-
-
 														$("#enfants").hide();
 
-														//Suite conclusion
+														connaissanceEtSuite();
 
-														conclusionAppears();
+														
 
 														}
 
@@ -1796,6 +1778,167 @@ $(document).ready(function(){
 		}
 
 		return booleanTest;
+	}
+
+	function connaissanceEtSuite()
+	{
+		// https://www.dyn-web.com/tutorials/forms/select/selected.php
+
+		document.getElementById("connaissance").style.display = "flex";
+
+		$('#nameConnaissance').change(function(){
+
+		    if( $(this).val() == 'Groupe Facebook :'){
+
+		        $("#nameGroupeFacebook").show();
+
+		    }else{
+
+		        $("#nameGroupeFacebook").hide();
+
+		        $("#aucunGroupe").hide();
+		    }
+
+		    if( $(this).val() == 'Autre :'){
+
+		        $("#nameAutre").show();
+
+		    }else{
+		        $("#nameAutre").hide();
+
+		        $("#aucunePrecision").hide();
+		    }
+		});
+
+		formConnaissanceElt.addEventListener("submit",function(e){
+
+			if( $('#nameConnaissance').val() == '')
+			{
+				//Erreur
+
+				$("#aucuneConnaissance").show();
+
+			}else{
+
+				if( $('#nameConnaissance').val() == 'Groupe Facebook :')
+				{
+
+					if($('#nameGroupeFacebook').val().trim().length !=0)
+					{
+
+						finalUser.connaissanceUser = $('#nameConnaissance').val() + ' ' +$('#nameGroupeFacebook').val();
+
+						//ok
+
+						finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
+
+					finalUser.description();
+
+					//JS to JSON object
+
+					var dataToSend = JSON.stringify(finalUser);
+
+					console.log("JSON");
+
+					console.log(dataToSend);
+
+					$("#connaissance").hide();
+
+																	
+
+					conclusionAppears();
+						
+
+					}else{
+
+						//Erreur
+
+						$("#aucunGroupe").show();
+
+
+					}
+
+
+				}
+				
+
+				if( $('#nameConnaissance').val() == 'Autre :')
+				{
+
+					if($('#nameAutre').val().trim().length !=0)
+					{
+
+						finalUser.connaissanceUser = $('#nameConnaissance').val() + ' ' +$('#nameAutre').val();
+
+						//ok
+
+						finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
+
+					finalUser.description();
+
+					//JS to JSON object
+
+					var dataToSend = JSON.stringify(finalUser);
+
+					console.log("JSON");
+
+					console.log(dataToSend);
+
+					$("#connaissance").hide();
+
+																	
+
+					conclusionAppears();
+						
+
+					}else{
+
+						//Erreur
+
+						$("#aucunePrecision").show();
+
+
+					}
+
+				}
+
+				if( $('#nameConnaissance').val() != 'Autre :' && $('#nameConnaissance').val() != 'Groupe Facebook :')
+				{
+					finalUser.connaissanceUser = $('#nameConnaissance').val();
+
+					//ok
+
+					finalUser.uniqueIdUser = uniqueIdSum(); // ATTRIBUT 14 OBJET FINAL
+
+					finalUser.description();
+
+					//JS to JSON object
+
+					var dataToSend = JSON.stringify(finalUser);
+
+					console.log("JSON");
+
+					console.log(dataToSend);
+
+					$("#connaissance").hide();
+
+																	
+
+					conclusionAppears();
+
+				}
+				
+
+
+			}
+
+
+
+			e.preventDefault();
+		});
+
+
+
 	}
 
 	/**  functions End **/
