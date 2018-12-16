@@ -8,7 +8,7 @@ class FormUsersManagerPDO extends FormUsersManager
 
 	public function add(FormUser $formUser) 
   {
-    $q = $this->dao->prepare('INSERT INTO formdonuts SET uniqueIdFormUser = :uniqueIdFormUser, souhaitUser = :souhaitUser, isOperationUser = :isOperationUser, dateOperationUser = :dateOperationUser,poidsPerduUser = :poidsPerduUser,  satisfactionOperationUser= :satisfactionOperationUser, sexe = :sexe, age = :age,taille = :taille, poids = :poids,situationFamilialeUser = :situationFamilialeUser, isEnfantsUser = :isEnfantsUser,nbreEnfantsUser = :nbreEnfantsUser, date_time_form = NOW()');
+    $q = $this->dao->prepare('INSERT INTO formdonuts SET uniqueIdFormUser = :uniqueIdFormUser, souhaitUser = :souhaitUser, isOperationUser = :isOperationUser, dateOperationUser = :dateOperationUser,poidsPerduUser = :poidsPerduUser,  satisfactionOperationUser= :satisfactionOperationUser, sexe = :sexe, age = :age,taille = :taille, poids = :poids,situationFamilialeUser = :situationFamilialeUser, isEnfantsUser = :isEnfantsUser,nbreEnfantsUser = :nbreEnfantsUser,connaissance = :connaissance, date_time_form = NOW()');
 
     
     
@@ -25,6 +25,7 @@ class FormUsersManagerPDO extends FormUsersManager
     $q->bindValue(':situationFamilialeUser', $formUser->getSituationFamilialeUser());
     $q->bindValue(':isEnfantsUser', $formUser->getIsEnfantsUser());
     $q->bindValue(':nbreEnfantsUser', $formUser->getNbreEnfantsUser(), \PDO::PARAM_INT);
+    $q->bindValue(':connaissance', $formUser->getConnaissance());
     
     
     $q->execute();
