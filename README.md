@@ -7,7 +7,7 @@ Questionnaire DONUTS : Développement Outils Numériques Utiles Travail  Surpoid
 
 La branche questionnaire_donuts_V2_with_php_mysql contient le code source de la 2ème version  du site DONUTS avec base de donnée.
   
-   ## Fonctionnement de la version V2 (modifications en cours) de DONUTS 
+   ## Fonctionnement de la version V2 (modifications terminées) de DONUTS 
    
    La version V2 a un design amélioré; certaines questions ont été reformulées. De plus, les questions ont été regroupées pour former 10 questions. Une question " Comment avez vous pris connaissance de l'étude ? " a été ajoutée.
    
