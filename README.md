@@ -38,7 +38,7 @@
    
    La version V2 a un design amélioré; certaines questions ont été reformulées. 
    
-   #### Fonctionnement de la version V2 (modifications en cours) de DONUTS
+   #### Fonctionnement de la version V3 (modifications en cours) de DONUTS
    
    Les données enregistrées ne seront pas téléchargées manuellement mais envoyées par email tous les jeudis à 10h , heure de France (GMT+1) à l'équipe chargée d'analyser les résultats.
    
